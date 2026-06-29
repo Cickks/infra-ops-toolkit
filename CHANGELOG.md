@@ -8,3 +8,4 @@
 - Added `.gitignore` rules to prevent large binaries and secrets from entering Git history.
 - Added GitHub Actions, Dependabot, Prettier, Git attributes, and API documentation placeholders.
 - Added phase tracking, evidence standards, server/client inventory, change management, and troubleshooting documentation.
+- Documented Codex MCP setup, plugin state, connector auth needs, and safety rules.

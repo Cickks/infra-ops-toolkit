@@ -41,6 +41,7 @@ The project demonstrates hands-on systems administration, infrastructure enginee
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Change Management](docs/CHANGE_MANAGEMENT.md)
 - [Evidence Standards](docs/EVIDENCE_STANDARDS.md)
+- [Codex Workstation Setup](docs/CODEX_SETUP.md)
 - [Interview Prep](docs/INTERVIEW_PREP.md)
 - [AI Prompting](docs/AI_PROMPTING.md)
 - [Contributing](CONTRIBUTING.md)
