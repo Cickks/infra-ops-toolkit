@@ -1,0 +1,61 @@
+# Operating system and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+*.publishsettings
+*password*
+*secret*
+*token*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
+
+# Large binaries and installers
+Documentation/Downloads/
+ISOs/
+Networking/
+Linux/RaspberryPi/
+*.iso
+*.img
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.exe
+*.msi
+*.zip
+*.7z
+*.rar
+*.gz
+*.bz2
+*.xz
+
+# Generated reports
+reports/generated/
+coverage/
+dist/
+build/
+
+# Keep screenshot evidence intentional
+*.png
+!screenshots/**/*.png
+!Documentation/**/*.png
