@@ -15,7 +15,7 @@ Infrastructure Engineer, and Cybersecurity professional.
 | Current phase      | Phase 12                                                                                                                          |
 | Current focus      | LINUX01 advanced Linux practice through backups, app planning, documentation platform planning, then INFRA01 production readiness |
 | Recently completed | Phase 11.9 enterprise hardening and environment validation                                                                        |
-| Future platform    | AI Steve / AI Operations Platform                                                                                                 |
+| Future platform    | LocalOps Assistant / AI Operations Platform                                                                                       |
 
 ## Sequencing
 
@@ -25,7 +25,7 @@ Infrastructure Engineer, and Cybersecurity professional.
 4. PowerShell Remoting validation.
 5. Linux administration fundamentals on `LINUX01`.
 6. Networking, cybersecurity, monitoring, cloud, automation, and DevOps.
-7. AI Steve after the infrastructure foundation is understood and documented.
+7. LocalOps Assistant after the infrastructure foundation is understood and documented.
 
 ## Dashboard Sub-Plan
 
@@ -39,8 +39,8 @@ The homelab should eventually have dashboards for both the workstation and INFRA
   future SSD upgrade.
 - Monitoring dashboard later: Uptime Kuma, Grafana, Prometheus, and service checks during monitoring
   phases.
-- AI Steve integration later: use the dashboard/service inventory as a source for automation,
-  documentation, and AI operations.
+- LocalOps Assistant integration later: use the dashboard/service inventory as a source for
+  automation, documentation, and AI operations.
 
 This keeps the dashboard goal visible without forcing heavy services onto Raspberry Pi storage too
 early.
@@ -68,21 +68,20 @@ Operating decision:
 - Make `INFRA01` a primary services host after SSD storage, Docker data placement, monitoring, and
   backup planning are in place.
 
-Future AI Steve path:
+Future LocalOps Assistant path:
 
 - Phase 14 gives visibility through monitoring and dashboards.
 - Phase 18 makes `INFRA01` a real container/services node.
-- Phase 22 lets AI Steve read from or operate against documented services, health checks, logs, and
-  inventories.
+- Phase 22 lets LocalOps Assistant read from or operate against documented services, health checks,
+  logs, and inventories.
 
-Expanded AI Steve vision:
+Expanded LocalOps Assistant vision:
 
-- AI Steve should become more than an infrastructure chatbot.
-- Long-term target: a personal enterprise operating system for infrastructure, documentation, help
-  desk practice, cybersecurity, automation, portfolio evidence, certification study, future business
-  workflows, and personal productivity.
-- AI Steve should only run meaningful operations against documented, monitored, backed-up systems
-  with approval gates and rollback plans.
+- LocalOps Assistant should become more than an infrastructure chatbot.
+- Long-term target: a local operations assistant for infrastructure documentation, help desk
+  practice, cybersecurity notes, automation planning, portfolio evidence, and certification study.
+- LocalOps Assistant should only run meaningful operations against documented, monitored, backed-up
+  systems with approval gates and rollback plans.
 
 ## Portfolio Outcome
 

@@ -33,7 +33,7 @@ a reviewer can understand the objective, evidence, and skills demonstrated.
 | 12    | Advanced Linux And Self-Hosting                 | In Progress          | Linux shared services, automation primitives, backups, and first self-hosted service planning                                                                |
 | 12.0A | LINUX01 Practice Before INFRA01                 | Complete             | Baseline and package-maintenance validation complete; new kernel `6.8.0-134-generic`, SSH, Docker, containerd, Compose, and Portainer validated after reboot |
 | 12.0B | INFRA01 Production Readiness                    | Planned              | NVMe HAT, 1TB NVMe SSD, active cooling, OS updates, SSH, static IP/DHCP reservation, Docker, Compose, Portainer, and SSD-backed data path                    |
-| 22    | AI Steve / AI Operations Platform               | Planned              | Prompt/versioning, provider abstraction, ops automation                                                                                                      |
+| 22    | LocalOps Assistant / AI Operations Platform     | Planned              | Prompt/versioning, provider abstraction, ops automation                                                                                                      |
 
 ## Current Phase 12 Detail
 
@@ -41,8 +41,8 @@ Goal:
 
 - Turn `LINUX01` from a Linux fundamentals host into a controlled internal services host.
 - Practice production-readiness tasks safely on `LINUX01` before applying them to `INFRA01`.
-- Prepare `INFRA01` as a future 24/7 infrastructure, monitoring, automation, dashboard, and AI Steve
-  node before real services depend on it.
+- Prepare `INFRA01` as a future 24/7 infrastructure, monitoring, automation, dashboard, and LocalOps
+  Assistant node before real services depend on it.
 - Build enterprise Linux skills before adding heavier self-hosted apps.
 - Keep self-hosting management-only and documentation-first.
 
@@ -102,15 +102,15 @@ begin active project work.
 ## Dashboard Sub-Plan
 
 Purpose: track the future homelab services dashboard so it does not get lost between Phase 11,
-INFRA01, monitoring, and AI Steve.
+INFRA01, monitoring, and LocalOps Assistant.
 
-| Stage       | Target                       | Status  | Notes                                                                                                         |
-| ----------- | ---------------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
-| Dashboard-1 | Laptop/workstation dashboard | Planned | Build a lightweight local dashboard first for service links, IPs, roles, phase status, and evidence links     |
-| Dashboard-2 | Add INFRA01 visibility       | Planned | After Raspberry Pi microSD setup, track hostname, IP, SSH status, storage state, and future service readiness |
-| Dashboard-3 | Pi-hosted dashboard          | Future  | Host on INFRA01 after storage is stable; heavier service hosting can wait until SSD upgrade                   |
-| Dashboard-4 | Monitoring integration       | Future  | Add Uptime Kuma, Grafana, Prometheus, and service checks during monitoring phases                             |
-| Dashboard-5 | AI Steve integration         | Future  | Feed dashboard/service inventory into AI Steve, LabTrack, or documentation automation later                   |
+| Stage       | Target                         | Status  | Notes                                                                                                         |
+| ----------- | ------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------- |
+| Dashboard-1 | Laptop/workstation dashboard   | Planned | Build a lightweight local dashboard first for service links, IPs, roles, phase status, and evidence links     |
+| Dashboard-2 | Add INFRA01 visibility         | Planned | After Raspberry Pi microSD setup, track hostname, IP, SSH status, storage state, and future service readiness |
+| Dashboard-3 | Pi-hosted dashboard            | Future  | Host on INFRA01 after storage is stable; heavier service hosting can wait until SSD upgrade                   |
+| Dashboard-4 | Monitoring integration         | Future  | Add Uptime Kuma, Grafana, Prometheus, and service checks during monitoring phases                             |
+| Dashboard-5 | LocalOps Assistant integration | Future  | Feed dashboard/service inventory into LocalOps Assistant, LabTrack, or documentation automation later         |
 
 Initial dashboard fields:
 
@@ -129,8 +129,8 @@ Storage decision:
 
 - Laptop dashboard can start before INFRA01 storage is ready.
 - Raspberry Pi dashboard hosting should wait until microSD setup is complete.
-- Write-heavy monitoring, logs, databases, and AI Steve support services should wait for a future
-  SSD upgrade.
+- Write-heavy monitoring, logs, databases, and LocalOps Assistant support services should wait for a
+  future SSD upgrade.
 
 ## INFRA01 Lifecycle Decision
 
@@ -148,7 +148,7 @@ Future role:
 | 12    | Practice risky concepts on `LINUX01`; prepare `INFRA01` hardware/storage/SSH/static IP/Docker/Portainer before real services |
 | 14    | Begin monitoring/dashboard visibility for `INFRA01` when useful                                                              |
 | 18    | Promote `INFRA01` into the main always-on container/services host after SSD readiness                                        |
-| 22    | Allow AI Steve to observe or manage `INFRA01` only after services are documented, monitored, and backed up                   |
+| 22    | Allow LocalOps Assistant to observe or manage `INFRA01` only after services are documented, monitored, and backed up         |
 
 Storage plan:
 

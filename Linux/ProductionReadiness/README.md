@@ -28,8 +28,8 @@ Then apply the same discipline to `INFRA01` after the hardware is ready.
 
 ## INFRA01 Production Target
 
-Before hosting real monitoring, automation, dashboard, Portainer, or AI Steve support services,
-`INFRA01` should have:
+Before hosting real monitoring, automation, dashboard, Portainer, or LocalOps Assistant support
+services, `INFRA01` should have:
 
 - NVMe HAT installed.
 - 1TB NVMe SSD installed.

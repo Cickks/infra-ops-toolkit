@@ -2,12 +2,12 @@
 
 ## Overview
 
-The Enterprise Homelab simulates a realistic SMB IT environment for systems administration,
-infrastructure engineering, cybersecurity, networking, cloud, automation, and future AI operations
-work.
+Infrastructure Operations Toolkit documents a realistic SMB-style homelab for systems
+administration, infrastructure engineering, cybersecurity, networking, cloud, automation, and future
+AI operations work.
 
 The lab is intentionally sequenced: infrastructure fundamentals come first, then security,
-monitoring, cloud, automation, DevOps, and AI. The future AI Steve platform should enhance
+monitoring, cloud, automation, DevOps, and AI. The future LocalOps Assistant platform should enhance
 operations only after the environment is understood and documented.
 
 ## Documentation Map
