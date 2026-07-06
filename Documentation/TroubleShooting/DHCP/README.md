@@ -2,7 +2,8 @@
 
 Use this folder for DHCP troubleshooting notes.
 
-Record symptoms, affected clients, lease checks, scope checks, root cause, fix, validation, prevention, and interview relevance.
+Record symptoms, affected clients, lease checks, scope checks, root cause, fix, validation,
+prevention, and interview relevance.
 
 ## Common Checks
 

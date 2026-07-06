@@ -2,7 +2,8 @@
 
 Use this folder for DNS troubleshooting notes.
 
-Record symptoms, lookup results, resolver configuration, zone checks, root cause, fix, validation, prevention, and interview relevance.
+Record symptoms, lookup results, resolver configuration, zone checks, root cause, fix, validation,
+prevention, and interview relevance.
 
 ## Common Checks
 

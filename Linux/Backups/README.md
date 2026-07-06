@@ -4,11 +4,13 @@ Purpose: document Phase 12 Linux backup and restore work.
 
 ## Objective
 
-Create a repeatable backup process for Linux configuration and service data, then validate at least one restore.
+Create a repeatable backup process for Linux configuration and service data, then validate at least
+one restore.
 
 ## Enterprise Relevance
 
-Self-hosting without restore testing is fragile. A real administrator must know what data matters, where it lives, how often it changes, how to back it up, and how to restore it.
+Self-hosting without restore testing is fragile. A real administrator must know what data matters,
+where it lives, how often it changes, how to back it up, and how to restore it.
 
 ## Initial Backup Scope
 
@@ -24,13 +26,13 @@ Do not commit backup archives to Git.
 
 ## Candidate Tools
 
-| Tool | Use |
-| --- | --- |
-| `rsync` | File sync and simple backups |
-| `tar` | Portable archives |
-| `sha256sum` | Integrity checks |
+| Tool        | Use                                            |
+| ----------- | ---------------------------------------------- |
+| `rsync`     | File sync and simple backups                   |
+| `tar`       | Portable archives                              |
+| `sha256sum` | Integrity checks                               |
 | `systemctl` | Stop/start services around backups when needed |
-| `cron` | Schedule backup checks after manual validation |
+| `cron`      | Schedule backup checks after manual validation |
 
 ## Evidence Commands
 

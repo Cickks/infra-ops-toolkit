@@ -14,7 +14,8 @@ Record:
 - Problems encountered and fixes.
 - Interview relevance.
 
-Do not commit large VM exports, appliance images, or backup archives. Store checksums, versions, paths, and evidence notes instead.
+Do not commit large VM exports, appliance images, or backup archives. Store checksums, versions,
+paths, and evidence notes instead.
 
 ## Standard Backup Notes
 
@@ -58,14 +59,14 @@ Date documented: 2026-06-30
 
 Snapshot status:
 
-| System | Backup Type | Status | Notes |
-| --- | --- | --- | --- |
-| `DC01` | VirtualBox snapshot | Complete | Stable post-Phase 11 management/DNS validation state |
-| `PRINT01` | VirtualBox snapshot | Complete | Stable post-Phase 11 management/WinRM validation state |
-| `DHCP01` | VirtualBox snapshot | Complete | Stable post-Phase 11 management/WinRM validation state |
-| `FILE01` | VirtualBox snapshot | Complete | Stable post-Phase 11 management/WinRM validation state |
-| `LINUX01` | VirtualBox snapshot | Complete | Stable Docker and Portainer baseline state |
-| `INFRA01` | microSD image backup | Pending | Raspberry Pi is staged and validated; create image backup before hosting important services |
+| System    | Backup Type          | Status   | Notes                                                                                       |
+| --------- | -------------------- | -------- | ------------------------------------------------------------------------------------------- |
+| `DC01`    | VirtualBox snapshot  | Complete | Stable post-Phase 11 management/DNS validation state                                        |
+| `PRINT01` | VirtualBox snapshot  | Complete | Stable post-Phase 11 management/WinRM validation state                                      |
+| `DHCP01`  | VirtualBox snapshot  | Complete | Stable post-Phase 11 management/WinRM validation state                                      |
+| `FILE01`  | VirtualBox snapshot  | Complete | Stable post-Phase 11 management/WinRM validation state                                      |
+| `LINUX01` | VirtualBox snapshot  | Complete | Stable Docker and Portainer baseline state                                                  |
+| `INFRA01` | microSD image backup | Pending  | Raspberry Pi is staged and validated; create image backup before hosting important services |
 
 Rollback note:
 

@@ -4,12 +4,12 @@ Role: Print services, printer sharing, drivers, queues, and client print validat
 
 ## Portfolio Status
 
-| Item | Status |
-| --- | --- |
-| Phase | Help desk and infrastructure operations |
-| Area | Print services and client support |
+| Item           | Status                                                           |
+| -------------- | ---------------------------------------------------------------- |
+| Phase          | Help desk and infrastructure operations                          |
+| Area           | Print services and client support                                |
 | Evidence state | Template ready; add live printer and queue output when available |
-| Related docs | `../../../Documentation/TroubleShooting/PrintServer/README.md` |
+| Related docs   | `../../../Documentation/TroubleShooting/PrintServer/README.md`   |
 
 ## Notes
 
@@ -62,4 +62,5 @@ rundll32 printui.dll,PrintUIEntry /?
 
 ## Interview Relevance
 
-This proves practical help desk troubleshooting, Windows service awareness, and client/server validation.
+This proves practical help desk troubleshooting, Windows service awareness, and client/server
+validation.

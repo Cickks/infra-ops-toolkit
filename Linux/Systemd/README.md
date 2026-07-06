@@ -4,15 +4,18 @@ Purpose: document Phase 12 custom Linux service work.
 
 ## Objective
 
-Create and manage a simple custom systemd service to understand service lifecycle, logs, startup behavior, dependencies, and rollback.
+Create and manage a simple custom systemd service to understand service lifecycle, logs, startup
+behavior, dependencies, and rollback.
 
 ## Enterprise Relevance
 
-Modern Linux servers use systemd to manage daemons. Sysadmins must be able to inspect units, modify service behavior, troubleshoot failed starts, and understand what starts at boot.
+Modern Linux servers use systemd to manage daemons. Sysadmins must be able to inspect units, modify
+service behavior, troubleshoot failed starts, and understand what starts at boot.
 
 ## Starter Service Idea
 
-Build a small internal status service or script-based service that writes a timestamped health line to a log. Keep it simple: the goal is service management, not application complexity.
+Build a small internal status service or script-based service that writes a timestamped health line
+to a log. Keep it simple: the goal is service management, not application complexity.
 
 ## Evidence Commands
 

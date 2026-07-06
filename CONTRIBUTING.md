@@ -41,7 +41,8 @@ Use this shape for new operational docs:
 
 ## Update Rules
 
-When a change affects project organization or evidence, update every related file that needs to stay accurate:
+When a change affects project organization or evidence, update every related file that needs to stay
+accurate:
 
 - `README.md` for navigation changes.
 - `ARCHITECTURE.md` for system design or folder-routing changes.
@@ -52,4 +53,5 @@ When a change affects project organization or evidence, update every related fil
 - `docs/SOFTWARE_INVENTORY.md` for installer, ISO, archive, version, source, or checksum changes.
 - `CHANGELOG.md` for meaningful milestones.
 
-Do not leave placeholder folders blank. Add a README that explains the folder purpose and what evidence belongs there.
+Do not leave placeholder folders blank. Add a README that explains the folder purpose and what
+evidence belongs there.

@@ -1,6 +1,7 @@
 # Portainer
 
-Use this folder for Portainer setup, Docker management evidence, and container administration notes for `LINUX01`.
+Use this folder for Portainer setup, Docker management evidence, and container administration notes
+for `LINUX01`.
 
 ## Phase 11.7 Portainer
 
@@ -22,19 +23,21 @@ Objective:
 Why this matters in a real company:
 
 - Container platforms need management, visibility, and controlled access.
-- Portainer gives administrators a web UI for Docker resources, which helps with operations, troubleshooting, and training.
-- Portainer also increases risk because it can control Docker through `/var/run/docker.sock`; protecting Portainer is protecting the Docker host.
+- Portainer gives administrators a web UI for Docker resources, which helps with operations,
+  troubleshooting, and training.
+- Portainer also increases risk because it can control Docker through `/var/run/docker.sock`;
+  protecting Portainer is protecting the Docker host.
 
 ## Phase 11.6 Prerequisites
 
-| Requirement | Status |
-| --- | --- |
-| `LINUX01` reachable over SSH | Complete |
-| Docker Engine installed | Complete, Docker Engine `29.6.1` |
-| Docker Compose plugin installed | Complete, Compose plugin `v5.2.0` |
-| Docker service state | `docker.service` active and enabled |
-| Container runtime validation | Complete, `hello-world` passed |
-| Docker access model | Sudo-only; `michael` is not in the `docker` group |
+| Requirement                     | Status                                            |
+| ------------------------------- | ------------------------------------------------- |
+| `LINUX01` reachable over SSH    | Complete                                          |
+| Docker Engine installed         | Complete, Docker Engine `29.6.1`                  |
+| Docker Compose plugin installed | Complete, Compose plugin `v5.2.0`                 |
+| Docker service state            | `docker.service` active and enabled               |
+| Container runtime validation    | Complete, `hello-world` passed                    |
+| Docker access model             | Sudo-only; `michael` is not in the `docker` group |
 
 ## Pre-Change Validation
 
@@ -74,7 +77,8 @@ Security decision:
 
 Official reference:
 
-- Portainer CE Docker Standalone Linux install: `https://docs.portainer.io/start/install-ce/server/docker/linux`
+- Portainer CE Docker Standalone Linux install:
+  `https://docs.portainer.io/start/install-ce/server/docker/linux`
 
 ## Deployment Commands
 
@@ -118,25 +122,27 @@ sudo docker compose -f portainer-compose.yaml up -d
 
 Validated on 2026-06-30:
 
-| Check | Result |
-| --- | --- |
-| Portainer image | `portainer/portainer-ce:sts` |
-| Container name | `portainer` |
-| Container state | Running |
-| Persistent volume | `portainer_data` exists |
-| Docker network | `portainer_network` exists |
-| Published host port | `9443/tcp` |
-| Internal container ports | `8000/tcp`, `9000/tcp`, `9443/tcp` |
-| Host exposure | Only `9443` is published to the host |
-| Windows connectivity | `Test-NetConnection 192.168.56.50 -Port 9443` passed |
-| Web UI | Portainer loaded at `https://192.168.56.50:9443` |
-| Local Docker environment | Visible and `Up` in Portainer |
-| Docker version shown in UI | `29.6.1` |
-| Admin login | Working |
+| Check                      | Result                                               |
+| -------------------------- | ---------------------------------------------------- |
+| Portainer image            | `portainer/portainer-ce:sts`                         |
+| Container name             | `portainer`                                          |
+| Container state            | Running                                              |
+| Persistent volume          | `portainer_data` exists                              |
+| Docker network             | `portainer_network` exists                           |
+| Published host port        | `9443/tcp`                                           |
+| Internal container ports   | `8000/tcp`, `9000/tcp`, `9443/tcp`                   |
+| Host exposure              | Only `9443` is published to the host                 |
+| Windows connectivity       | `Test-NetConnection 192.168.56.50 -Port 9443` passed |
+| Web UI                     | Portainer loaded at `https://192.168.56.50:9443`     |
+| Local Docker environment   | Visible and `Up` in Portainer                        |
+| Docker version shown in UI | `29.6.1`                                             |
+| Admin login                | Working                                              |
 
 Validation note:
 
-- The UI and container output may show internal ports `8000` and `9000`, but they are not published to the host in this deployment. The management surface exposed to the workstation is HTTPS on `9443`.
+- The UI and container output may show internal ports `8000` and `9000`, but they are not published
+  to the host in this deployment. The management surface exposed to the workstation is HTTPS on
+  `9443`.
 
 Run on `LINUX01`:
 
@@ -242,7 +248,9 @@ VM rollback:
 
 ## Interview Relevance
 
-This phase proves container administration, Docker Compose basics, management UI deployment, service exposure, persistent Docker volumes, privileged socket risk awareness, and production-minded documentation.
+This phase proves container administration, Docker Compose basics, management UI deployment, service
+exposure, persistent Docker volumes, privileged socket risk awareness, and production-minded
+documentation.
 
 Do not store passwords or recovery keys.
 

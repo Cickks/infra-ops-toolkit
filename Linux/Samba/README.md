@@ -4,22 +4,25 @@ Purpose: document Phase 12 Linux SMB file-sharing work on `LINUX01`.
 
 ## Objective
 
-Build an internal Samba share so Windows and Linux systems can access a Linux-hosted file share. This reinforces file sharing, permissions, firewall validation, service management, and troubleshooting.
+Build an internal Samba share so Windows and Linux systems can access a Linux-hosted file share.
+This reinforces file sharing, permissions, firewall validation, service management, and
+troubleshooting.
 
 ## Enterprise Relevance
 
-Samba appears in mixed Windows/Linux environments where Linux servers provide SMB-compatible shares. It helps compare Linux sharing against the existing Windows `FILE01` file server.
+Samba appears in mixed Windows/Linux environments where Linux servers provide SMB-compatible shares.
+It helps compare Linux sharing against the existing Windows `FILE01` file server.
 
 ## Planned Baseline
 
-| Item | Planned Value |
-| --- | --- |
-| Host | `LINUX01` |
-| Share name | `linux_shared` |
-| Path | `/srv/samba/linux_shared` |
-| Admin path | Management network |
+| Item              | Planned Value                       |
+| ----------------- | ----------------------------------- |
+| Host              | `LINUX01`                           |
+| Share name        | `linux_shared`                      |
+| Path              | `/srv/samba/linux_shared`           |
+| Admin path        | Management network                  |
 | Client validation | Windows workstation and Linux shell |
-| Internet exposure | None |
+| Internet exposure | None                                |
 
 ## Phase 12.1 Pre-Change Status
 
@@ -27,12 +30,12 @@ Date checked: 2026-07-06 UTC
 
 Package maintenance was performed before Samba installation. Samba is not installed yet.
 
-| Check | Result |
-| --- | --- |
-| `apt policy samba` installed state | `(none)` |
-| Samba candidate | `2:4.19.5+dfsg-4ubuntu9.6` |
-| Existing listeners on TCP `445` or `139` | None shown |
-| Package maintenance state | Upgrade completed; reboot and post-upgrade validation passed on 2026-07-06 UTC |
+| Check                                    | Result                                                                         |
+| ---------------------------------------- | ------------------------------------------------------------------------------ |
+| `apt policy samba` installed state       | `(none)`                                                                       |
+| Samba candidate                          | `2:4.19.5+dfsg-4ubuntu9.6`                                                     |
+| Existing listeners on TCP `445` or `139` | None shown                                                                     |
+| Package maintenance state                | Upgrade completed; reboot and post-upgrade validation passed on 2026-07-06 UTC |
 
 Decision:
 
@@ -52,19 +55,19 @@ Objective:
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
-| Hostname | `linux01` |
-| OS | Ubuntu 24.04.4 LTS |
-| Kernel | `6.8.0-134-generic` |
-| Root filesystem | 24G total, 7.6G used, 15G available, 34% used |
-| SSH service | Active and enabled |
-| Samba installed state | `(none)` |
-| Samba candidate version | `2:4.19.5+dfsg-4ubuntu9.6` |
-| Existing TCP `445` listener | None shown |
-| Existing TCP `139` listener | None shown |
-| Change marker | `/root/phase12-backups/phase12-1-samba-start.txt` |
-| Change marker timestamp | Mon Jul 6 01:24:05 AM UTC 2026 |
+| Check                       | Result                                            |
+| --------------------------- | ------------------------------------------------- |
+| Hostname                    | `linux01`                                         |
+| OS                          | Ubuntu 24.04.4 LTS                                |
+| Kernel                      | `6.8.0-134-generic`                               |
+| Root filesystem             | 24G total, 7.6G used, 15G available, 34% used     |
+| SSH service                 | Active and enabled                                |
+| Samba installed state       | `(none)`                                          |
+| Samba candidate version     | `2:4.19.5+dfsg-4ubuntu9.6`                        |
+| Existing TCP `445` listener | None shown                                        |
+| Existing TCP `139` listener | None shown                                        |
+| Change marker               | `/root/phase12-backups/phase12-1-samba-start.txt` |
+| Change marker timestamp     | Mon Jul 6 01:24:05 AM UTC 2026                    |
 
 Decision:
 
@@ -83,20 +86,21 @@ Objective:
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
-| Samba version | `4.19.5-Ubuntu` |
-| `smbd.service` | Active, running, enabled |
-| `nmbd.service` | Active, running, enabled |
-| TCP `139` | Listening on IPv4 and IPv6 |
-| TCP `445` | Listening on IPv4 and IPv6 |
+| Check           | Result                                                                                                    |
+| --------------- | --------------------------------------------------------------------------------------------------------- |
+| Samba version   | `4.19.5-Ubuntu`                                                                                           |
+| `smbd.service`  | Active, running, enabled                                                                                  |
+| `nmbd.service`  | Active, running, enabled                                                                                  |
+| TCP `139`       | Listening on IPv4 and IPv6                                                                                |
+| TCP `445`       | Listening on IPv4 and IPv6                                                                                |
 | Service warning | `Referenced but unset environment variable ...OPTIONS` shown for `smbd` and `nmbd`; services still active |
 
 Decision:
 
 - Samba package installation succeeded.
 - Proceed to backing up `/etc/samba/smb.conf` before creating or modifying shares.
-- Treat the systemd environment-variable warning as non-blocking unless service behavior fails validation.
+- Treat the systemd environment-variable warning as non-blocking unless service behavior fails
+  validation.
 
 ## Phase 12.1 Config Backup And Share Directory
 
@@ -110,24 +114,25 @@ Objective:
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
-| Initial typo | `sudo c[ p ...` failed with command not found; no change made |
-| Config backup | `/root/phase12-backups/smb.conf.pre-phase12-1` created |
-| Backup owner/group | `root:root` |
-| Backup size | 8917 bytes |
-| `testparm` | Loaded services file OK |
-| Server role | `ROLE_STANDALONE` |
-| Share directory | `/srv/samba/linux_shared` created |
-| Share group | `linuxshare` created |
-| User group assignment | `michael` added to `linuxshare` |
-| Directory owner/group | `root:linuxshare` |
-| Directory mode | `2770` / `drwxrws---` |
+| Check                 | Result                                                        |
+| --------------------- | ------------------------------------------------------------- |
+| Initial typo          | `sudo c[ p ...` failed with command not found; no change made |
+| Config backup         | `/root/phase12-backups/smb.conf.pre-phase12-1` created        |
+| Backup owner/group    | `root:root`                                                   |
+| Backup size           | 8917 bytes                                                    |
+| `testparm`            | Loaded services file OK                                       |
+| Server role           | `ROLE_STANDALONE`                                             |
+| Share directory       | `/srv/samba/linux_shared` created                             |
+| Share group           | `linuxshare` created                                          |
+| User group assignment | `michael` added to `linuxshare`                               |
+| Directory owner/group | `root:linuxshare`                                             |
+| Directory mode        | `2770` / `drwxrws---`                                         |
 
 Operational note:
 
 - The current shell session may not see the new `linuxshare` group membership until logout/login.
-- Samba authentication is separate from Linux group membership; a Samba password for `michael` may be required before Windows access succeeds.
+- Samba authentication is separate from Linux group membership; a Samba password for `michael` may
+  be required before Windows access succeeds.
 
 Decision:
 
@@ -158,14 +163,14 @@ Share block validated by `testparm`:
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
-| `testparm` share output | `[linux_shared]` present with expected path, group, masks, and write access |
-| Service restart | `sudo systemctl restart smbd nmbd` completed |
-| Typo during validation | `system status smbd --no-pager` failed safely; corrected command used |
-| `smbd.service` after restart | Active, running, enabled |
-| `nmbd.service` after restart | Active, running, enabled |
-| Service warning | `Referenced but unset environment variable ...OPTIONS` still present; non-blocking while services are healthy |
+| Check                        | Result                                                                                                        |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `testparm` share output      | `[linux_shared]` present with expected path, group, masks, and write access                                   |
+| Service restart              | `sudo systemctl restart smbd nmbd` completed                                                                  |
+| Typo during validation       | `system status smbd --no-pager` failed safely; corrected command used                                         |
+| `smbd.service` after restart | Active, running, enabled                                                                                      |
+| `nmbd.service` after restart | Active, running, enabled                                                                                      |
+| Service warning              | `Referenced but unset environment variable ...OPTIONS` still present; non-blocking while services are healthy |
 
 Decision:
 
@@ -193,20 +198,21 @@ Objective:
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
-| Samba password creation | `sudo smbpasswd -a michael` succeeded; password not documented |
-| Samba user enablement | `sudo smbpasswd -e michael` succeeded |
-| Samba account listing | `michael:1000:Michael Painter` shown by `pdbedit -L` |
-| `smbclient` initial state | Missing; command not found |
-| `smbclient` install | Installed `smbclient` and `libsmbclient0` |
-| Package restart impact | No services, containers, sessions, or VM guests needed restart |
-| Windows mapping | `net use \\192.168.56.50\linux_shared /user:michael` completed successfully |
+| Check                     | Result                                                                      |
+| ------------------------- | --------------------------------------------------------------------------- |
+| Samba password creation   | `sudo smbpasswd -a michael` succeeded; password not documented              |
+| Samba user enablement     | `sudo smbpasswd -e michael` succeeded                                       |
+| Samba account listing     | `michael:1000:Michael Painter` shown by `pdbedit -L`                        |
+| `smbclient` initial state | Missing; command not found                                                  |
+| `smbclient` install       | Installed `smbclient` and `libsmbclient0`                                   |
+| Package restart impact    | No services, containers, sessions, or VM guests needed restart              |
+| Windows mapping           | `net use \\192.168.56.50\linux_shared /user:michael` completed successfully |
 
 Decision:
 
 - Authentication and Windows share mapping passed.
-- Final validation still requires create/read/delete testing through the mapped share and server-side permission verification.
+- Final validation still requires create/read/delete testing through the mapped share and
+  server-side permission verification.
 
 Next validation:
 
@@ -235,14 +241,14 @@ Objective:
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
-| Share path listing | `/srv/samba/linux_shared` checked |
-| Directory owner/group | `root:linuxshare` |
-| Directory permissions | `drwxrws---` |
-| Directory contents after test | No test file remained after delete |
-| Parent directory | `/srv/samba` remains `root:root` |
-| `log.smbd` review | Normal Samba startup entries shown; no obvious access-denied or share errors in displayed output |
+| Check                         | Result                                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------------ |
+| Share path listing            | `/srv/samba/linux_shared` checked                                                                |
+| Directory owner/group         | `root:linuxshare`                                                                                |
+| Directory permissions         | `drwxrws---`                                                                                     |
+| Directory contents after test | No test file remained after delete                                                               |
+| Parent directory              | `/srv/samba` remains `root:root`                                                                 |
+| `log.smbd` review             | Normal Samba startup entries shown; no obvious access-denied or share errors in displayed output |
 
 Decision:
 
@@ -256,21 +262,23 @@ Date validated: 2026-07-06 UTC
 Objective:
 
 - Prove the Windows client can write to, read from, and delete from the Linux-hosted Samba share.
-- Confirm the business outcome: a Windows user can use the Linux SMB share through the management network.
+- Confirm the business outcome: a Windows user can use the Linux SMB share through the management
+  network.
 
 Validated evidence:
 
-| Check | Result |
-| --- | --- |
+| Check                    | Result                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------ |
 | Create file from Windows | `echo Phase 12 Samba test > \\192.168.56.50\linux_shared\phase12-samba-test.txt` succeeded |
-| Read file from Windows | `type \\192.168.56.50\linux_shared\phase12-samba-test.txt` returned the test content |
-| Delete file from Windows | `del \\192.168.56.50\linux_shared\phase12-samba-test.txt` succeeded |
-| Server-side cleanup | `/srv/samba/linux_shared` showed no test file remaining after deletion |
-| Server-side permissions | Share directory remained `root:linuxshare` with `drwxrws---` permissions |
+| Read file from Windows   | `type \\192.168.56.50\linux_shared\phase12-samba-test.txt` returned the test content       |
+| Delete file from Windows | `del \\192.168.56.50\linux_shared\phase12-samba-test.txt` succeeded                        |
+| Server-side cleanup      | `/srv/samba/linux_shared` showed no test file remaining after deletion                     |
+| Server-side permissions  | Share directory remained `root:linuxshare` with `drwxrws---` permissions                   |
 
 Note:
 
-- PowerShell `echo` wrote the words on separate lines, but the readback confirmed the file was created and read successfully over SMB.
+- PowerShell `echo` wrote the words on separate lines, but the readback confirmed the file was
+  created and read successfully over SMB.
 
 Phase result:
 
@@ -288,7 +296,8 @@ Rollback:
 
 Interview relevance:
 
-- This proves Linux package installation, Samba service management, Linux group permissions, SMB authentication, Windows client mapping, port validation, and end-to-end access testing.
+- This proves Linux package installation, Samba service management, Linux group permissions, SMB
+  authentication, Windows client mapping, port validation, and end-to-end access testing.
 
 ## Implementation Checklist
 

@@ -1,13 +1,14 @@
 # Production Readiness
 
-Purpose: track Phase 12.0A and 12.0B readiness work before `INFRA01` becomes a serious 24/7 infrastructure host.
+Purpose: track Phase 12.0A and 12.0B readiness work before `INFRA01` becomes a serious 24/7
+infrastructure host.
 
 ## Current Flow
 
-| Step | Host | Status | Purpose |
-| --- | --- | --- | --- |
+| Step  | Host      | Status      | Purpose                                                                  |
+| ----- | --------- | ----------- | ------------------------------------------------------------------------ |
 | 12.0A | `LINUX01` | In Progress | Practice risky concepts in a VM before applying them to the Raspberry Pi |
-| 12.0B | `INFRA01` | Planned | Install hardware and configure the Pi as a production-ready foundation |
+| 12.0B | `INFRA01` | Planned     | Install hardware and configure the Pi as a production-ready foundation   |
 
 ## Practice-First Rule
 
@@ -27,7 +28,8 @@ Then apply the same discipline to `INFRA01` after the hardware is ready.
 
 ## INFRA01 Production Target
 
-Before hosting real monitoring, automation, dashboard, Portainer, or AI Steve support services, `INFRA01` should have:
+Before hosting real monitoring, automation, dashboard, Portainer, or AI Steve support services,
+`INFRA01` should have:
 
 - NVMe HAT installed.
 - 1TB NVMe SSD installed.

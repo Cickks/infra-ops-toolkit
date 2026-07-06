@@ -4,11 +4,13 @@ Purpose: document Phase 12 scheduled Linux task work.
 
 ## Objective
 
-Create simple scheduled jobs that perform repeatable maintenance or reporting tasks and write logs that can be validated.
+Create simple scheduled jobs that perform repeatable maintenance or reporting tasks and write logs
+that can be validated.
 
 ## Enterprise Relevance
 
-Cron jobs are still common for maintenance, reporting, cleanup, backups, and lightweight automation. Production systems require scheduled jobs to be documented, observable, and reversible.
+Cron jobs are still common for maintenance, reporting, cleanup, backups, and lightweight automation.
+Production systems require scheduled jobs to be documented, observable, and reversible.
 
 ## Starter Jobs
 

@@ -2,9 +2,13 @@
 
 ## Overview
 
-The Enterprise Homelab simulates a realistic SMB IT environment for systems administration, infrastructure engineering, cybersecurity, networking, cloud, automation, and future AI operations work.
+The Enterprise Homelab simulates a realistic SMB IT environment for systems administration,
+infrastructure engineering, cybersecurity, networking, cloud, automation, and future AI operations
+work.
 
-The lab is intentionally sequenced: infrastructure fundamentals come first, then security, monitoring, cloud, automation, DevOps, and AI. The future AI Steve platform should enhance operations only after the environment is understood and documented.
+The lab is intentionally sequenced: infrastructure fundamentals come first, then security,
+monitoring, cloud, automation, DevOps, and AI. The future AI Steve platform should enhance
+operations only after the environment is understood and documented.
 
 ## Documentation Map
 
@@ -27,22 +31,22 @@ Use these files as the architecture source of truth:
 
 ## Network Baseline
 
-| Item | Value |
-| --- | --- |
-| Domain | `corp.local` |
-| Subnet | `192.168.50.0/24` |
-| Default gateway | `192.168.50.1` |
-| Primary DNS | `192.168.50.10` (`DC01`) |
+| Item            | Value                    |
+| --------------- | ------------------------ |
+| Domain          | `corp.local`             |
+| Subnet          | `192.168.50.0/24`        |
+| Default gateway | `192.168.50.1`           |
+| Primary DNS     | `192.168.50.10` (`DC01`) |
 
 ## Core Windows Infrastructure
 
-| Host | Role |
-| --- | --- |
-| `DC01` | Active Directory Domain Services, DNS, Kerberos, OUs, users, groups |
-| `DHCP01` | DHCP scope and address leasing |
-| `FILE01` | File services and shared storage |
-| `PRINT01` | Print services |
-| `CLIENTxx` | Domain-joined Windows workstations |
+| Host       | Role                                                                |
+| ---------- | ------------------------------------------------------------------- |
+| `DC01`     | Active Directory Domain Services, DNS, Kerberos, OUs, users, groups |
+| `DHCP01`   | DHCP scope and address leasing                                      |
+| `FILE01`   | File services and shared storage                                    |
+| `PRINT01`  | Print services                                                      |
+| `CLIENTxx` | Domain-joined Windows workstations                                  |
 
 ## Linux And Future Platform Areas
 
@@ -86,7 +90,8 @@ Use these folders for portfolio evidence:
 - `Documentation/HomeLab/Architecture/` for architecture, master plan, and baseline design.
 - `Documentation/HomeLab/Servers/` and `Documentation/Server_Documentation/` for server evidence.
 - `Documentation/HomeLab/Clients/` for workstation and help desk evidence.
-- `Documentation/HomeLab/Network/` and `Documentation/Network_Diagrams/` for network notes and diagrams.
+- `Documentation/HomeLab/Network/` and `Documentation/Network_Diagrams/` for network notes and
+  diagrams.
 - `Documentation/HomeLab/SOPs/` and `Documentation/SOPs/` for procedures.
 - `Documentation/TroubleShooting/` for issue-specific troubleshooting notes.
 - `Windows/` for Windows administration tooling.

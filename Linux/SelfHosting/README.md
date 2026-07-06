@@ -1,6 +1,7 @@
 # Phase 12 Self-Hosting
 
-Purpose: plan and document Phase 12 self-hosted services without skipping the Linux operations work those services depend on.
+Purpose: plan and document Phase 12 self-hosted services without skipping the Linux operations work
+those services depend on.
 
 ## Phase 12 Mission
 
@@ -18,7 +19,8 @@ Build `LINUX01` into an internal services host while practicing enterprise admin
 
 Date validated: 2026-07-05
 
-`LINUX01` passed the Phase 12.0A baseline validation needed before beginning the first shared-service build.
+`LINUX01` passed the Phase 12.0A baseline validation needed before beginning the first
+shared-service build.
 
 Validated:
 
@@ -31,7 +33,8 @@ Decision:
 
 - Proceed next to a controlled Phase 12.1 Samba baseline change on `LINUX01`.
 - Keep package updates separate from the Samba change.
-- Keep `INFRA01` out of important service hosting until storage, Docker data placement, backups, monitoring expectations, and rollback are documented.
+- Keep `INFRA01` out of important service hosting until storage, Docker data placement, backups,
+  monitoring expectations, and rollback are documented.
 
 ## Phase 12 Package Maintenance Gate
 
@@ -72,27 +75,27 @@ Decision:
 
 ## Service Order
 
-| Order | Area | Reason |
-| --- | --- | --- |
-| 1 | Samba | Teaches SMB interoperability with Windows clients and permissions mapping |
-| 2 | NFS | Teaches Linux-to-Linux storage and future container/storage patterns |
-| 3 | Cron | Teaches scheduled maintenance, reporting, and recurring operations |
-| 4 | systemd | Teaches service lifecycle, boot behavior, logs, and unit-file discipline |
-| 5 | SSH keys | Completes reliable admin access to `INFRA01` and sync workflows |
-| 6 | Linux backups | Protects configs and service data before real apps arrive |
-| 7 | First app | Adds a real internal app after rollback and backup paths exist |
+| Order | Area          | Reason                                                                    |
+| ----- | ------------- | ------------------------------------------------------------------------- |
+| 1     | Samba         | Teaches SMB interoperability with Windows clients and permissions mapping |
+| 2     | NFS           | Teaches Linux-to-Linux storage and future container/storage patterns      |
+| 3     | Cron          | Teaches scheduled maintenance, reporting, and recurring operations        |
+| 4     | systemd       | Teaches service lifecycle, boot behavior, logs, and unit-file discipline  |
+| 5     | SSH keys      | Completes reliable admin access to `INFRA01` and sync workflows           |
+| 6     | Linux backups | Protects configs and service data before real apps arrive                 |
+| 7     | First app     | Adds a real internal app after rollback and backup paths exist            |
 
 ## First App Decision
 
 Recommended first candidates:
 
-| App | Recommendation | Why |
-| --- | --- | --- |
-| Gitea | Strong candidate | Practical portfolio value; teaches web app hosting, persistence, backups, updates, and internal Git workflows |
-| Vaultwarden | Strong candidate with caution | High real-world value; requires careful secrets handling and backup discipline |
-| Nextcloud | Later | Storage-heavy and backup-sensitive; better after Linux backup confidence improves |
-| Jellyfin | Later | Useful but less aligned with immediate sysadmin interview evidence |
-| Home Assistant | Later | Best when there is a clear hardware or automation goal |
+| App            | Recommendation                | Why                                                                                                           |
+| -------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Gitea          | Strong candidate              | Practical portfolio value; teaches web app hosting, persistence, backups, updates, and internal Git workflows |
+| Vaultwarden    | Strong candidate with caution | High real-world value; requires careful secrets handling and backup discipline                                |
+| Nextcloud      | Later                         | Storage-heavy and backup-sensitive; better after Linux backup confidence improves                             |
+| Jellyfin       | Later                         | Useful but less aligned with immediate sysadmin interview evidence                                            |
+| Home Assistant | Later                         | Best when there is a clear hardware or automation goal                                                        |
 
 Default recommendation: build Gitea first after the Phase 12 Linux basics are complete.
 
@@ -120,8 +123,10 @@ For each service, record:
 - Keep services internal to the lab.
 - Prefer management-network access for administration.
 - Do not expose services directly to the internet.
-- Do not commit secrets, admin passwords, database passwords, tokens, SSH private keys, or backup archives.
-- Do not host important or write-heavy data on `INFRA01` microSD without a backup image and restore plan.
+- Do not commit secrets, admin passwords, database passwords, tokens, SSH private keys, or backup
+  archives.
+- Do not host important or write-heavy data on `INFRA01` microSD without a backup image and restore
+  plan.
 
 ## Phase 12 Success Criteria
 

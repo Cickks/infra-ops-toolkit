@@ -1,6 +1,7 @@
 # Security
 
-Purpose: Windows hardening, Linux hardening, vulnerability scanning, Wazuh, and security documentation.
+Purpose: Windows hardening, Linux hardening, vulnerability scanning, Wazuh, and security
+documentation.
 
 Use subfolders:
 

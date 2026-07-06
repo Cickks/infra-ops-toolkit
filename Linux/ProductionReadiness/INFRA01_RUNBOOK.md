@@ -8,13 +8,15 @@ Status: Phase 12.0A active; Phase 12.0B planned.
 
 `INFRA01` is the future 24/7 infrastructure host.
 
-Do not place important services on `INFRA01` until storage, network, SSH, Docker, Portainer, backup, and rollback are documented.
+Do not place important services on `INFRA01` until storage, network, SSH, Docker, Portainer, backup,
+and rollback are documented.
 
 ## Phase 12.0A — LINUX01 Practice
 
 Objective:
 
-- Practice the commands and concepts needed for `INFRA01` production readiness without risking the Raspberry Pi.
+- Practice the commands and concepts needed for `INFRA01` production readiness without risking the
+  Raspberry Pi.
 
 Run on `LINUX01`:
 
@@ -70,15 +72,21 @@ Success criteria:
 
 Validation result:
 
-- 2026-07-05: Phase 12.0A baseline validation completed on `LINUX01` using screenshot evidence from the terminal session.
-- Windows management tests from source `192.168.56.1` to `LINUX01` management IP `192.168.56.50` passed for SSH port `22` and Portainer port `9443`.
-- Linux baseline checks captured host, network, storage, mounts, `/etc/fstab`, SSH, Docker, containerd, Docker inventory, volumes, and networks.
+- 2026-07-05: Phase 12.0A baseline validation completed on `LINUX01` using screenshot evidence from
+  the terminal session.
+- Windows management tests from source `192.168.56.1` to `LINUX01` management IP `192.168.56.50`
+  passed for SSH port `22` and Portainer port `9443`.
+- Linux baseline checks captured host, network, storage, mounts, `/etc/fstab`, SSH, Docker,
+  containerd, Docker inventory, volumes, and networks.
 - Result is good for continuing Phase 12 work on `LINUX01`.
-- Do not promote the same workflow to `INFRA01` yet; `INFRA01` still needs NVMe SSD, persistent mounts, Docker data placement, backup planning, and rollback documentation before important services.
+- Do not promote the same workflow to `INFRA01` yet; `INFRA01` still needs NVMe SSD, persistent
+  mounts, Docker data placement, backup planning, and rollback documentation before important
+  services.
 
 Open item:
 
-- Treat `LINUX01` package updates as a separate package-maintenance change with its own validation and rollback notes.
+- Treat `LINUX01` package updates as a separate package-maintenance change with its own validation
+  and rollback notes.
 
 ## Phase 12.0B — INFRA01 Hardware And OS Readiness
 
@@ -144,7 +152,8 @@ Current staging:
 
 - `192.168.1.133` on Wi-Fi.
 
-Do not force `192.168.50.60` while the Pi is still on a network where `192.168.50.0/24` is not valid.
+Do not force `192.168.50.60` while the Pi is still on a network where `192.168.50.0/24` is not
+valid.
 
 ## NVMe SSD Readiness
 
@@ -177,7 +186,8 @@ Use UUID in `/etc/fstab`, not a changing device name.
 
 ## Docker Readiness
 
-Docker should store persistent container data on SSD-backed storage before real services are deployed.
+Docker should store persistent container data on SSD-backed storage before real services are
+deployed.
 
 Validate:
 

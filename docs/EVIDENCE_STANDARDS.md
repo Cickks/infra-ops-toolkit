@@ -4,29 +4,29 @@ Portfolio evidence should prove real work without exposing secrets or creating n
 
 ## Evidence Types
 
-| Evidence | Use For | Git Policy |
-| --- | --- | --- |
-| Markdown notes | Architecture, process, lessons learned | Commit |
-| Screenshots | Validation and visual proof | Commit only curated screenshots |
-| Command summaries | Verification and troubleshooting | Commit after redaction |
-| Diagrams | Network and system architecture | Commit |
-| Installer/ISO inventory | Tool versions and sources | Commit as text metadata |
-| ISOs/installers/VM exports | Local toolkit storage | Do not commit |
-| Software inventory | Versions, source URLs, checksums, purpose | Commit |
+| Evidence                   | Use For                                   | Git Policy                      |
+| -------------------------- | ----------------------------------------- | ------------------------------- |
+| Markdown notes             | Architecture, process, lessons learned    | Commit                          |
+| Screenshots                | Validation and visual proof               | Commit only curated screenshots |
+| Command summaries          | Verification and troubleshooting          | Commit after redaction          |
+| Diagrams                   | Network and system architecture           | Commit                          |
+| Installer/ISO inventory    | Tool versions and sources                 | Commit as text metadata         |
+| ISOs/installers/VM exports | Local toolkit storage                     | Do not commit                   |
+| Software inventory         | Versions, source URLs, checksums, purpose | Commit                          |
 
 ## Folder Placement
 
-| Evidence | Folder |
-| --- | --- |
-| Master plan and architecture | `../Documentation/HomeLab/Architecture/` |
-| Server notes | `../Documentation/Server_Documentation/<HOST>/` |
-| Client notes | `../Documentation/HomeLab/Clients/` |
-| Network notes | `../Documentation/HomeLab/Network/` |
-| Diagrams | `../Documentation/Network_Diagrams/` |
-| SOPs | `../Documentation/HomeLab/SOPs/` or `../Documentation/SOPs/` |
-| Troubleshooting | `../Documentation/TroubleShooting/<AREA>/` |
-| Screenshots | Relevant evidence folder, using descriptive filenames |
-| Software metadata | `SOFTWARE_INVENTORY.md` |
+| Evidence                     | Folder                                                       |
+| ---------------------------- | ------------------------------------------------------------ |
+| Master plan and architecture | `../Documentation/HomeLab/Architecture/`                     |
+| Server notes                 | `../Documentation/Server_Documentation/<HOST>/`              |
+| Client notes                 | `../Documentation/HomeLab/Clients/`                          |
+| Network notes                | `../Documentation/HomeLab/Network/`                          |
+| Diagrams                     | `../Documentation/Network_Diagrams/`                         |
+| SOPs                         | `../Documentation/HomeLab/SOPs/` or `../Documentation/SOPs/` |
+| Troubleshooting              | `../Documentation/TroubleShooting/<AREA>/`                   |
+| Screenshots                  | Relevant evidence folder, using descriptive filenames        |
+| Software metadata            | `SOFTWARE_INVENTORY.md`                                      |
 
 ## Screenshot Naming
 

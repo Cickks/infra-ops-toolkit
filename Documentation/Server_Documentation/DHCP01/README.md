@@ -4,12 +4,12 @@ Role: DHCP server for the enterprise homelab client scope.
 
 ## Portfolio Status
 
-| Item | Status |
-| --- | --- |
-| Phase | Windows infrastructure and network services |
-| Area | DHCP, client addressing, network validation |
-| Evidence state | Template ready; add live scope output when available |
-| Related docs | `../../../docs/IP_ADDRESSING.md`, `../../../Documentation/HomeLab/Network/README.md` |
+| Item           | Status                                                                               |
+| -------------- | ------------------------------------------------------------------------------------ |
+| Phase          | Windows infrastructure and network services                                          |
+| Area           | DHCP, client addressing, network validation                                          |
+| Evidence state | Template ready; add live scope output when available                                 |
+| Related docs   | `../../../docs/IP_ADDRESSING.md`, `../../../Documentation/HomeLab/Network/README.md` |
 
 ## Notes
 
@@ -64,4 +64,5 @@ Resolve-DnsName DC01.corp.local
 
 ## Interview Relevance
 
-This proves understanding of DHCP scopes, client addressing, DNS dependency, and network-first troubleshooting.
+This proves understanding of DHCP scopes, client addressing, DNS dependency, and network-first
+troubleshooting.

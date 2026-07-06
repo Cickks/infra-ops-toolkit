@@ -4,12 +4,12 @@ Role: File services, shared storage, NTFS permissions, and access validation.
 
 ## Portfolio Status
 
-| Item | Status |
-| --- | --- |
-| Phase | Help desk and infrastructure operations |
-| Area | File shares, permissions, access testing |
-| Evidence state | Template ready; add live share and permission output when available |
-| Related docs | `../../../docs/OPERATIONS_RUNBOOK.md`, `../../../Documentation/TroubleShooting/FileServer/README.md` |
+| Item           | Status                                                                                               |
+| -------------- | ---------------------------------------------------------------------------------------------------- |
+| Phase          | Help desk and infrastructure operations                                                              |
+| Area           | File shares, permissions, access testing                                                             |
+| Evidence state | Template ready; add live share and permission output when available                                  |
+| Related docs   | `../../../docs/OPERATIONS_RUNBOOK.md`, `../../../Documentation/TroubleShooting/FileServer/README.md` |
 
 ## Notes
 
@@ -63,4 +63,5 @@ whoami /groups
 
 ## Interview Relevance
 
-This proves file server administration, permission troubleshooting, least privilege, and validation from the user perspective.
+This proves file server administration, permission troubleshooting, least privilege, and validation
+from the user perspective.

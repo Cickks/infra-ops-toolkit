@@ -2,7 +2,8 @@
 
 Use this folder for networking troubleshooting notes.
 
-Record symptoms, affected systems, IP configuration, routing, firewall, packet capture, root cause, fix, validation, prevention, and interview relevance.
+Record symptoms, affected systems, IP configuration, routing, firewall, packet capture, root cause,
+fix, validation, prevention, and interview relevance.
 
 ## Common Checks
 

@@ -1,6 +1,7 @@
 # Troubleshooting
 
-Use this as the standard troubleshooting method across Windows, Linux, networking, cloud, and AI phases.
+Use this as the standard troubleshooting method across Windows, Linux, networking, cloud, and AI
+phases.
 
 ## Method
 
@@ -121,8 +122,10 @@ Date validated: 2026-06-29
 
 Findings:
 
-- The physical workstation originally used home-router/ISP DNS, so `corp.local` names failed unless DC01 was specified manually.
-- The workstation could not directly reach `192.168.50.0/24`; this is expected because production is VM-to-VM only from the host perspective.
+- The physical workstation originally used home-router/ISP DNS, so `corp.local` names failed unless
+  DC01 was specified manually.
+- The workstation could not directly reach `192.168.50.0/24`; this is expected because production is
+  VM-to-VM only from the host perspective.
 - `LINUX01.corp.local` was missing, then briefly had a wrong duplicate A record for `192.168.50.60`.
 - Management records initially had duplicate/wrong values pointing to `192.168.56.10`.
 - LINUX01 initially allowed the NAT adapter to receive `corp.local` DNS/search-domain influence.
@@ -132,8 +135,10 @@ Fixes:
 
 - Added `LINUX01.corp.local -> 192.168.50.50`.
 - Created `*-mgmt.corp.local` management records for server administration.
-- Configured the Windows VirtualBox host-only adapter to use DNS server `192.168.56.10` and suffix `corp.local`.
-- Updated LINUX01 Netplan so `corp.local` is scoped to `enp0s3` and NAT DHCP does not own internal DNS domains.
+- Configured the Windows VirtualBox host-only adapter to use DNS server `192.168.56.10` and suffix
+  `corp.local`.
+- Updated LINUX01 Netplan so `corp.local` is scoped to `enp0s3` and NAT DHCP does not own internal
+  DNS domains.
 - Removed incorrect duplicate `DC01` and `LINUX01` DNS records.
 - Flushed Linux DNS cache and validated production, management, and internet DNS results.
 
@@ -154,21 +159,25 @@ Date validated: 2026-06-30
 Symptoms:
 
 - Ping to `FILE01` management IP initially failed.
-- WinRM TCP port `5985` was reachable, but `Invoke-Command` failed when using IP addresses and production FQDNs from the physical workstation.
+- WinRM TCP port `5985` was reachable, but `Invoke-Command` failed when using IP addresses and
+  production FQDNs from the physical workstation.
 - `Test-WSMan` initially reported trust/authentication or firewall/profile style errors.
 
 Root causes:
 
 - `FILE01` VM was not booted during the first reachability sweep.
-- DNS had stale or incorrect records, including NAT `10.0.3.15` answers and management records pointing at production IPs.
-- The physical workstation did not have a clean Kerberos trust path for IP-based remoting or management aliases.
+- DNS had stale or incorrect records, including NAT `10.0.3.15` answers and management records
+  pointing at production IPs.
+- The physical workstation did not have a clean Kerberos trust path for IP-based remoting or
+  management aliases.
 
 Fixes:
 
 - Booted `FILE01` and confirmed `192.168.56.40` responded to ping.
 - Cleaned production DNS names so they resolve to `192.168.50.0/24`.
 - Cleaned management DNS names so they resolve to `192.168.56.0/24`.
-- Added narrow WinRM TrustedHosts entries on the physical workstation for exact lab management names only.
+- Added narrow WinRM TrustedHosts entries on the physical workstation for exact lab management names
+  only.
 - Used management FQDNs for remote administration from the physical workstation.
 
 Validated results:
@@ -208,4 +217,5 @@ Validated results:
 
 Open maintenance note:
 
-- `LINUX01` reports available Ubuntu package updates in the login banner. Handle this as a deliberate package-maintenance change with validation and rollback notes.
+- `LINUX01` reports available Ubuntu package updates in the login banner. Handle this as a
+  deliberate package-maintenance change with validation and rollback notes.

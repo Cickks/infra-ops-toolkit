@@ -2,7 +2,8 @@
 
 ## Active Directory
 
-Active Directory is a centralized directory service that manages users, computers, groups, authentication, and authorization in Windows environments.
+Active Directory is a centralized directory service that manages users, computers, groups,
+authentication, and authorization in Windows environments.
 
 ## DNS
 
@@ -18,11 +19,13 @@ Group Policy centrally configures Windows users and computers across a domain.
 
 ## WinRM
 
-WinRM is Microsoft's remote management protocol. It enables PowerShell Remoting and remote administration, broadly comparable to SSH in Linux administration.
+WinRM is Microsoft's remote management protocol. It enables PowerShell Remoting and remote
+administration, broadly comparable to SSH in Linux administration.
 
 ## SSH
 
-SSH is a secure protocol used to remotely administer Linux and Unix systems over an encrypted connection.
+SSH is a secure protocol used to remotely administer Linux and Unix systems over an encrypted
+connection.
 
 ## NTFS vs Share Permissions
 

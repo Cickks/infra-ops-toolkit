@@ -9,4 +9,5 @@ Use this area for:
 - Windows hardening support tools.
 - Active Directory and infrastructure management utilities.
 
-Large installers and ZIP archives are ignored by Git. Track versions, sources, and checksums in `../docs/SOFTWARE_INVENTORY.md`.
+Large installers and ZIP archives are ignored by Git. Track versions, sources, and checksums in
+`../docs/SOFTWARE_INVENTORY.md`.

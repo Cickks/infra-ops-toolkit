@@ -2,7 +2,8 @@
 
 Use this folder for print server troubleshooting notes.
 
-Record symptoms, affected printer or client, queue checks, driver checks, permission checks, root cause, fix, validation, prevention, and interview relevance.
+Record symptoms, affected printer or client, queue checks, driver checks, permission checks, root
+cause, fix, validation, prevention, and interview relevance.
 
 ## Common Checks
 

@@ -1,6 +1,7 @@
 # PowerShell
 
-Purpose: Windows administration, reporting, monitoring, testing, and reusable scripts for the homelab.
+Purpose: Windows administration, reporting, monitoring, testing, and reusable scripts for the
+homelab.
 
 Use subfolders by domain:
 
@@ -13,7 +14,8 @@ Use subfolders by domain:
 - `Testing/` - validation and Pester tests.
 - `Modules/` - reusable module code.
 
-Every reusable script should include purpose, prerequisites, example usage, validation, and rollback notes where applicable.
+Every reusable script should include purpose, prerequisites, example usage, validation, and rollback
+notes where applicable.
 
 ## Portfolio Sync
 

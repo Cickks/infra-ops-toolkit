@@ -1,15 +1,16 @@
 # DC01
 
-Role: Active Directory Domain Services, DNS, Kerberos, identity baseline, OUs, users, groups, and domain authentication.
+Role: Active Directory Domain Services, DNS, Kerberos, identity baseline, OUs, users, groups, and
+domain authentication.
 
 ## Portfolio Status
 
-| Item | Status |
-| --- | --- |
-| Phase | 1 and 2 |
-| Area | Windows Server and Active Directory |
-| Evidence state | Documented baseline; add live command output and screenshots when available |
-| Related docs | `../../../docs/SERVER_INVENTORY.md`, `../../../Documentation/HomeLab/Architecture/NETWORK_BASELINE.md` |
+| Item           | Status                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------ |
+| Phase          | 1 and 2                                                                                                |
+| Area           | Windows Server and Active Directory                                                                    |
+| Evidence state | Documented baseline; add live command output and screenshots when available                            |
+| Related docs   | `../../../docs/SERVER_INVENTORY.md`, `../../../Documentation/HomeLab/Architecture/NETWORK_BASELINE.md` |
 
 ## Notes
 
@@ -62,4 +63,5 @@ repadmin /replsummary
 
 ## Interview Relevance
 
-This proves Active Directory administration, DNS awareness, identity lifecycle handling, and production-minded validation.
+This proves Active Directory administration, DNS awareness, identity lifecycle handling, and
+production-minded validation.

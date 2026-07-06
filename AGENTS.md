@@ -1,10 +1,13 @@
 # AI Agent Instructions
 
-This repository is a documentation-first enterprise homelab portfolio. Treat it as a professional infrastructure portfolio, not a throwaway notes folder.
+This repository is a documentation-first enterprise homelab portfolio. Treat it as a professional
+infrastructure portfolio, not a throwaway notes folder.
 
 ## Mission
 
-Help build a realistic SMB-style IT environment and portfolio that demonstrates production-minded systems administration, infrastructure engineering, cybersecurity, networking, cloud, automation, and future AI operations skills.
+Help build a realistic SMB-style IT environment and portfolio that demonstrates production-minded
+systems administration, infrastructure engineering, cybersecurity, networking, cloud, automation,
+and future AI operations skills.
 
 ## Architecture
 
@@ -12,22 +15,27 @@ Help build a realistic SMB-style IT environment and portfolio that demonstrates 
 - Keep server and client documentation aligned with the IP addressing standard.
 - Prefer diagrams, tables, runbooks, and evidence logs over vague prose.
 - Do not move large assets, ISOs, installers, or screenshots without explicit user approval.
-- When proposing architecture changes, explain operational impact, rollback, security risk, and interview relevance.
+- When proposing architecture changes, explain operational impact, rollback, security risk, and
+  interview relevance.
 
 ## Testing And Validation
 
 - For PowerShell scripts, prefer Pester tests when scripts become reusable.
 - Validate commands against the intended host type before documenting them.
-- For remote administration notes, distinguish local workstation commands from remote server commands.
+- For remote administration notes, distinguish local workstation commands from remote server
+  commands.
 - Every runbook should include verification steps and rollback guidance where possible.
 
 ## Documentation
 
 - Use clear Markdown headings and tables.
 - Document the why, not just the command.
-- Update every related file when a change affects navigation, architecture, phase status, evidence routing, inventories, or standards.
-- Update `docs/SOFTWARE_INVENTORY.md` whenever installers, ISOs, archives, tooling folders, versions, source URLs, or checksums change.
-- Do not leave portfolio folders blank; add a README that explains the folder purpose and expected evidence.
+- Update every related file when a change affects navigation, architecture, phase status, evidence
+  routing, inventories, or standards.
+- Update `docs/SOFTWARE_INVENTORY.md` whenever installers, ISOs, archives, tooling folders,
+  versions, source URLs, or checksums change.
+- Do not leave portfolio folders blank; add a README that explains the folder purpose and expected
+  evidence.
 - Capture:
   - objective
   - prerequisites
@@ -41,7 +49,8 @@ Help build a realistic SMB-style IT environment and portfolio that demonstrates 
 
 ## Security
 
-- Never commit secrets, private keys, passwords, recovery keys, tokens, publish settings, or live credentials.
+- Never commit secrets, private keys, passwords, recovery keys, tokens, publish settings, or live
+  credentials.
 - Redact personal identifiers that are not necessary for portfolio review.
 - Prefer references to secret storage locations instead of secret values.
 - Use least privilege, group-based access, and auditable change procedures.
@@ -68,7 +77,8 @@ If this repository gains a site or app:
 ## Logging And Operations
 
 - Keep change logs for meaningful homelab milestones.
-- Include evidence for completed phases, such as screenshots, command output summaries, or validation checklists.
+- Include evidence for completed phases, such as screenshots, command output summaries, or
+  validation checklists.
 - Use dates for operational journal entries.
 
 ## AI Prompt Engineering

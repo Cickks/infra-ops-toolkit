@@ -10,4 +10,5 @@ Use this area for:
 - DevOps automation.
 - Future AI operations automation.
 
-Large installer archives are ignored by Git. Track versions, sources, and checksums in `../docs/SOFTWARE_INVENTORY.md`.
+Large installer archives are ignored by Git. Track versions, sources, and checksums in
+`../docs/SOFTWARE_INVENTORY.md`.

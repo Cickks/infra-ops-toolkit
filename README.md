@@ -1,12 +1,17 @@
 # IT Engineer Toolkit
 
-Documentation-first portfolio for an enterprise homelab built to simulate a realistic small-to-medium business IT environment.
+Documentation-first portfolio for an enterprise homelab built to simulate a realistic
+small-to-medium business IT environment.
 
-The project demonstrates hands-on systems administration, infrastructure engineering, networking, cybersecurity, automation, cloud, Linux, and AI operations skills. It is organized as a living professional portfolio: every phase should produce evidence, notes, diagrams, screenshots, runbooks, and lessons learned that can be reviewed by future employers or AI coding assistants.
+The project demonstrates hands-on systems administration, infrastructure engineering, networking,
+cybersecurity, automation, cloud, Linux, and AI operations skills. It is organized as a living
+professional portfolio: every phase should produce evidence, notes, diagrams, screenshots, runbooks,
+and lessons learned that can be reviewed by future employers or AI coding assistants.
 
 ## Current Focus
 
-- Enterprise homelab progression toward Systems Administrator, IT Support Engineer, Infrastructure Engineer, and Cybersecurity Analyst roles.
+- Enterprise homelab progression toward Systems Administrator, IT Support Engineer, Infrastructure
+  Engineer, and Cybersecurity Analyst roles.
 - Windows Server and Active Directory foundation.
 - Linux administration fundamentals on `LINUX01`.
 - Documentation, troubleshooting, and operational discipline.
@@ -25,7 +30,8 @@ The project demonstrates hands-on systems administration, infrastructure enginee
 - `PowerShell/` - administration, reporting, monitoring, and test scripts.
 - `Windows/` - Windows administration tools such as Windows Admin Center and Sysinternals.
 - `Linux/` - Linux administration, SSH, Docker, Portainer, and Raspberry Pi work.
-- `Networking/` - tools and documentation for Nmap, Wireshark, pfSense, OPNsense, PuTTY, and Packet Tracer.
+- `Networking/` - tools and documentation for Nmap, Wireshark, pfSense, OPNsense, PuTTY, and Packet
+  Tracer.
 - `Security/` - hardening, vulnerability scanning, Wazuh, and security documentation.
 - `Automation/` - Terraform, automation tooling, and future infrastructure-as-code work.
 - `Certifications/` - certification notes and study artifacts.
@@ -56,4 +62,6 @@ The project demonstrates hands-on systems administration, infrastructure enginee
 
 ## Repository Policy
 
-Large binaries such as ISOs, installers, compressed appliance images, and VM exports are intentionally ignored by Git. Keep checksums, download sources, versions, and installation notes in Markdown instead of committing the binaries themselves.
+Large binaries such as ISOs, installers, compressed appliance images, and VM exports are
+intentionally ignored by Git. Keep checksums, download sources, versions, and installation notes in
+Markdown instead of committing the binaries themselves.

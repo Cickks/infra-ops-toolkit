@@ -38,11 +38,11 @@ Each SOP should include purpose, prerequisites, steps, validation, rollback, and
 
 ## Priority SOPs To Create
 
-| SOP | Status | Notes |
-| --- | --- | --- |
+| SOP                                 | Status | Notes                                           |
+| ----------------------------------- | ------ | ----------------------------------------------- |
 | Join Windows client to `corp.local` | Needed | Use client commands from `../Clients/README.md` |
-| Create and validate AD user | Needed | Include group assignment and login validation |
-| Disable and re-enable AD user | Needed | Supports offboarding and rehire evidence |
-| Validate DHCP and DNS | Needed | Supports domain join troubleshooting |
-| Capture `LINUX01` baseline | Needed | Supports Phase 11 evidence |
-| Test PowerShell Remoting | Needed | Supports Phase 10.2 |
+| Create and validate AD user         | Needed | Include group assignment and login validation   |
+| Disable and re-enable AD user       | Needed | Supports offboarding and rehire evidence        |
+| Validate DHCP and DNS               | Needed | Supports domain join troubleshooting            |
+| Capture `LINUX01` baseline          | Needed | Supports Phase 11 evidence                      |
+| Test PowerShell Remoting            | Needed | Supports Phase 10.2                             |

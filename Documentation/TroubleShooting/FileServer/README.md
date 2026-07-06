@@ -2,7 +2,8 @@
 
 Use this folder for file server troubleshooting notes.
 
-Record symptoms, affected share or user, permission checks, connectivity checks, root cause, fix, validation, prevention, and interview relevance.
+Record symptoms, affected share or user, permission checks, connectivity checks, root cause, fix,
+validation, prevention, and interview relevance.
 
 ## Common Checks
 

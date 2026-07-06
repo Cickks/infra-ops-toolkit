@@ -2,7 +2,8 @@
 
 Use this folder for Active Directory troubleshooting notes.
 
-Record symptoms, affected systems, checks performed, root cause, fix, validation, prevention, and interview relevance.
+Record symptoms, affected systems, checks performed, root cause, fix, validation, prevention, and
+interview relevance.
 
 ## Common Checks
 

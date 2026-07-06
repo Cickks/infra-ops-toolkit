@@ -14,7 +14,8 @@ Recommended topics:
 - Nmap discovery.
 - pfSense or OPNsense configuration.
 
-Keep baseline architecture in `../Architecture/NETWORK_BASELINE.md` and place detailed implementation evidence here.
+Keep baseline architecture in `../Architecture/NETWORK_BASELINE.md` and place detailed
+implementation evidence here.
 
 ## Standard Network Commands
 

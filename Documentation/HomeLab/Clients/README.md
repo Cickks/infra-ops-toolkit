@@ -11,7 +11,9 @@ Record one note per meaningful client scenario, such as:
 - Shared drive or printer access.
 - Help desk ticket evidence.
 
-Each client note should include the client hostname, assigned user or test account, objective, steps performed, validation result, screenshots or command summaries, problems encountered, and lessons learned.
+Each client note should include the client hostname, assigned user or test account, objective, steps
+performed, validation result, screenshots or command summaries, problems encountered, and lessons
+learned.
 
 ## Standard Client Commands
 
@@ -50,8 +52,8 @@ nltest /dsgetdc:corp.local
 
 ## Example Scenario Notes
 
-| Scenario | Evidence |
-| --- | --- |
-| New PC deployment | Client build, domain join, user login, mapped drive, GPO result |
-| Offboarding validation | Disabled account cannot log in |
-| Rehire validation | Re-enabled account can log in and access required resources |
+| Scenario               | Evidence                                                        |
+| ---------------------- | --------------------------------------------------------------- |
+| New PC deployment      | Client build, domain join, user login, mapped drive, GPO result |
+| Offboarding validation | Disabled account cannot log in                                  |
+| Rehire validation      | Re-enabled account can log in and access required resources     |

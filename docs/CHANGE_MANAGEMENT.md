@@ -1,6 +1,7 @@
 # Change Management
 
-Treat homelab changes like production changes. This makes the portfolio more credible and makes troubleshooting easier.
+Treat homelab changes like production changes. This makes the portfolio more credible and makes
+troubleshooting easier.
 
 ## Change Record Template
 
@@ -45,11 +46,11 @@ Update all affected files in the same change so the portfolio stays coherent.
 
 ## Risk Levels
 
-| Level | Meaning | Examples |
-| --- | --- | --- |
-| Low | Documentation or reversible configuration | Markdown update, screenshot rename |
-| Medium | Service or host configuration change | DHCP scope update, GPO change |
-| High | Identity, network, security, or data availability impact | AD change, firewall rule, server rebuild |
+| Level  | Meaning                                                  | Examples                                 |
+| ------ | -------------------------------------------------------- | ---------------------------------------- |
+| Low    | Documentation or reversible configuration                | Markdown update, screenshot rename       |
+| Medium | Service or host configuration change                     | DHCP scope update, GPO change            |
+| High   | Identity, network, security, or data availability impact | AD change, firewall rule, server rebuild |
 
 ## Required Validation
 
