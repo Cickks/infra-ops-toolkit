@@ -2,8 +2,8 @@
 
 This repository does not currently expose an application API.
 
-If a portfolio website, automation service, or AI Steve service is added later, document the API
-here with:
+If a portfolio website, automation service, or LocalOps Assistant service is added later, document
+the API here with:
 
 - Purpose
 - Authentication

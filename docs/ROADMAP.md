@@ -42,8 +42,8 @@ Infrastructure Engineer, and Cybersecurity professional.
 
 AI development intentionally starts after completing the Windows, Linux, networking, cybersecurity,
 monitoring, cloud, automation, and DevOps foundation. The goal is to become a strong Systems
-Administrator first, then build AI Steve as a platform that enhances and automates enterprise
-operations.
+Administrator first, then build LocalOps Assistant as a platform that enhances and automates
+enterprise operations.
 
 ## Core Principles
 
@@ -115,8 +115,8 @@ Enterprise reason:
   identity, network access, storage paths, permissions, service supervision, scheduled jobs, logs,
   backups, and rollback.
 - This also keeps the future 24/7 host clean: risky concepts are practiced on `LINUX01`, while
-  `INFRA01` becomes production-ready before monitoring, automation, dashboards, and AI Steve
-  integrations rely on it.
+  `INFRA01` becomes production-ready before monitoring, automation, dashboards, and LocalOps
+  Assistant integrations rely on it.
 
 ## Evidence Routing
 

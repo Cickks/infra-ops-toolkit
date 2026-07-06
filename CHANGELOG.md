@@ -21,13 +21,14 @@
 - Planned `INFRA01` upgrades now include NVMe HAT, 1TB NVMe SSD, active cooling, Raspberry Pi OS
   updates, SSH key validation, static IP or DHCP reservation, SSD-backed Docker data, Docker Engine,
   Docker Compose, and Portainer.
-- Expanded the AI Steve vision beyond infrastructure chat: personal enterprise operating system for
+- Expanded the LocalOps Assistant vision beyond infrastructure chat: local operations support for
   homelab operations, documentation, help desk workflows, security, automation, career evidence,
   study, business automation, dashboard/voice interaction, and personal productivity.
-- Added `AISTEVE/docs/AI_STEVE_VISION.md` and linked it from the AISteve README.
+- Added `LocalOps Assistant/docs/AI_STEVE_VISION.md` and linked it from the LocalOps Assistant
+  README.
 - Documented the INFRA01 lifecycle strategy: staged Raspberry Pi now, light use during Phase 12,
   monitoring/dashboard visibility later, main always-on services host around Phase 18 after SSD
-  readiness, and AI Steve integration around Phase 22.
+  readiness, and LocalOps Assistant integration around Phase 22.
 - Recorded the storage decision that the 128GB microSD is valid for boot/staging, while SSD storage
   should be added before important write-heavy services.
 - Started Phase 12 Advanced Linux and self-hosting kickoff.
@@ -60,7 +61,7 @@
   login working, and local Docker environment visible.
 - Added a dashboard sub-plan covering a laptop/workstation dashboard first, INFRA01 visibility after
   Raspberry Pi setup, Pi-hosted dashboards after stable storage, monitoring integration, and future
-  AI Steve/LabTrack integration.
+  LocalOps Assistant/LabTrack integration.
 - Completed Phase 11.8 Raspberry Pi preparation for `INFRA01`: Raspberry Pi OS Lite installed on
   microSD, hostname `infra01`, Wi-Fi staging IP `192.168.1.133`, SSH validated from Windows,
   baseline system evidence captured, package updates applied, reboot tested, and future production
@@ -110,7 +111,7 @@
 - Added homelab master plan and network baseline files under `Documentation/HomeLab/Architecture/`.
 - Updated navigation, architecture, roadmap, phase tracker, evidence standards, setup, contribution,
   change-management, and agent guidance to keep related docs synchronized.
-- Added documentation-first repository foundation for the IT Engineer Toolkit.
+- Added documentation-first repository foundation for Infrastructure Operations Toolkit.
 - Added AI agent instructions for future coding and documentation assistants.
 - Added architecture, setup, security, contribution, roadmap, IP addressing, operations, interview,
   and AI prompting documentation.

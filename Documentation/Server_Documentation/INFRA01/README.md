@@ -36,16 +36,16 @@ Current decision:
 
 Phase timing:
 
-| Phase | INFRA01 Role                                                                                                            |
-| ----- | ----------------------------------------------------------------------------------------------------------------------- |
-| 11.8  | Raspberry Pi prepared, named, updated, SSH validated, and documented                                                    |
-| 12    | Production-readiness upgrade; `LINUX01` remains the main Linux/self-hosting practice host                               |
-| 12.5  | Documentation and dashboard planning may reference `INFRA01`                                                            |
-| 14    | Monitoring may begin watching `INFRA01`; light Uptime Kuma/dashboard pilot is acceptable if documented                  |
-| 18    | Main activation point for `INFRA01` as an always-on Docker/container infrastructure host                                |
-| 18.5  | Reverse proxy and HTTPS patterns can make `INFRA01` services cleaner to access internally                               |
-| 21.5  | Storage/NAS maturity improves long-term service placement decisions                                                     |
-| 22    | AI Steve can query or operate against `INFRA01` after services, monitoring, logs, backups, and documentation are stable |
+| Phase | INFRA01 Role                                                                                                                      |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 11.8  | Raspberry Pi prepared, named, updated, SSH validated, and documented                                                              |
+| 12    | Production-readiness upgrade; `LINUX01` remains the main Linux/self-hosting practice host                                         |
+| 12.5  | Documentation and dashboard planning may reference `INFRA01`                                                                      |
+| 14    | Monitoring may begin watching `INFRA01`; light Uptime Kuma/dashboard pilot is acceptable if documented                            |
+| 18    | Main activation point for `INFRA01` as an always-on Docker/container infrastructure host                                          |
+| 18.5  | Reverse proxy and HTTPS patterns can make `INFRA01` services cleaner to access internally                                         |
+| 21.5  | Storage/NAS maturity improves long-term service placement decisions                                                               |
+| 22    | LocalOps Assistant can query or operate against `INFRA01` after services, monitoring, logs, backups, and documentation are stable |
 
 SSD decision:
 
@@ -61,8 +61,8 @@ SSD decision:
 Objective:
 
 - Turn `INFRA01` from a staged Raspberry Pi into a production-ready 24/7 infrastructure foundation
-  before hosting important monitoring, automation, dashboard, Portainer, or AI Steve support
-  services.
+  before hosting important monitoring, automation, dashboard, Portainer, or LocalOps Assistant
+  support services.
 
 Practice-first rule:
 
@@ -97,13 +97,14 @@ Success criteria:
 - Portainer is reachable only from the intended internal/management network.
 - Backup and rollback notes exist before real services are deployed.
 
-AI Steve connection:
+LocalOps Assistant connection:
 
-- `INFRA01` is intended to become one of the infrastructure nodes AI Steve can observe or help
-  manage later.
-- Before AI Steve touches it, `INFRA01` needs stable IP/DNS, SSH keys, service inventory,
+- `INFRA01` is intended to become one of the infrastructure nodes LocalOps Assistant can observe or
+  help manage later.
+- Before LocalOps Assistant touches it, `INFRA01` needs stable IP/DNS, SSH keys, service inventory,
   monitoring, logs, backups, and clear rollback procedures.
-- The goal is for AI Steve to work against documented infrastructure, not undocumented experiments.
+- The goal is for LocalOps Assistant to work against documented infrastructure, not undocumented
+  experiments.
 
 ## Phase 11.8 Raspberry Pi Preparation
 
