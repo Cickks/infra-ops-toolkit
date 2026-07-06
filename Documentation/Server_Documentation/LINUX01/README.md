@@ -561,6 +561,71 @@ Result:
 
 - Phase 12.2 NFS baseline is complete.
 - `LINUX01` now provides an internal NFS export for Linux storage practice.
+
+## Phase 12.3 Cron Baseline Complete
+
+Date validated: 2026-07-06
+
+Objective:
+
+- Create a safe scheduled health-report job on `LINUX01`.
+- Prove the script works manually before scheduling it.
+- Validate cron execution with a temporary short interval.
+- Change the final schedule to a daily production-style cadence.
+
+Pre-change validation:
+
+| Check           | Result                                        |
+| --------------- | --------------------------------------------- |
+| Hostname        | `linux01`                                     |
+| OS              | Ubuntu 24.04.4 LTS                            |
+| Kernel          | `6.8.0-134-generic`                           |
+| Time sync       | Enabled                                       |
+| NTP service     | Active                                        |
+| Root filesystem | 24G total, 7.7G used, 15G available, 35% used |
+| Memory          | 3.8Gi total, about 3.3Gi available            |
+| Cron service    | Active and enabled                            |
+| User crontab    | No crontab for `michael`                      |
+
+Implemented artifacts:
+
+| Artifact  | Path                                            |
+| --------- | ----------------------------------------------- |
+| Script    | `/opt/homelab/scripts/linux01-health-report.sh` |
+| Log file  | `/var/log/homelab/linux01-health-report.log`    |
+| Cron file | `/etc/cron.d/linux01-health-report`             |
+
+Validated behavior:
+
+- Script syntax check passed with `sudo bash -n`.
+- Manual execution appended a health report to `/var/log/homelab/linux01-health-report.log`.
+- Temporary validation schedule ran every 5 minutes.
+- Cron logs showed `/opt/homelab/scripts/linux01-health-report.sh` executed automatically at
+  `04:30:01`.
+- Final schedule changed to daily at `06:15 UTC`.
+- Cron file ownership is `root:root`.
+- Cron file mode is `0644`.
+
+Final cron entry:
+
+```cron
+# Phase 12.3 - LINUX01 daily health report
+# Runs daily at 06:15 UTC.
+15 6 * * * root /opt/homelab/scripts/linux01-health-report.sh
+```
+
+Rollback:
+
+- Remove `/etc/cron.d/linux01-health-report`.
+- Confirm cron remains active with `systemctl status cron --no-pager`.
+- Check recent cron logs with `journalctl -u cron --since "15 minutes ago" --no-pager`.
+- Optionally remove the script and log file if the job is fully retired.
+
+Operational result:
+
+- Phase 12.3 cron baseline is complete.
+- `LINUX01` now has a documented scheduled health-report job.
+- Phase 12.4 custom systemd service is the next planned Phase 12 task.
 - The service remains internal to the lab management subnet and must not be exposed to the internet.
 
 Rollback:

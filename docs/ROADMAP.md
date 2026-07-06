@@ -76,8 +76,8 @@ Primary order:
    planning, SSH validation, Docker data paths, Docker, Compose, and Portainer review.
 3. Build Samba for Windows/Linux file-sharing practice. Complete.
 4. Build NFS for Linux-to-Linux sharing and future container/storage concepts. Complete.
-5. Create cron jobs for scheduled maintenance and reporting. Next.
-6. Create a custom systemd service to prove service lifecycle management.
+5. Create cron jobs for scheduled maintenance and reporting. Complete.
+6. Create a custom systemd service to prove service lifecycle management. Next.
 7. Expand SSH key authentication and portfolio sync to `INFRA01`.
 8. Build Linux backup and restore validation.
 9. Choose one first self-hosted app with a documented change plan.

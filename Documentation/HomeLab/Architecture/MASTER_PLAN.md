@@ -102,8 +102,8 @@ Core build order:
 
 1. Samba. Complete.
 2. NFS. Complete.
-3. Cron jobs. Next.
-4. Custom systemd services.
+3. Cron jobs. Complete.
+4. Custom systemd services. Next.
 5. SSH key expansion.
 6. Linux backups and restore testing.
 7. First self-hosted application decision and change plan.

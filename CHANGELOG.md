@@ -2,6 +2,13 @@
 
 ## 2026-07-06
 
+- Completed Phase 12.3 cron baseline on `LINUX01`.
+- Created `/opt/homelab/scripts/linux01-health-report.sh` and
+  `/var/log/homelab/linux01-health-report.log`.
+- Validated the health report manually, then validated cron execution with a temporary
+  every-5-minute schedule.
+- Changed `/etc/cron.d/linux01-health-report` to the daily production-style schedule
+  `15 6 * * * root /opt/homelab/scripts/linux01-health-report.sh`.
 - Completed Phase 12.2 NFS baseline on `LINUX01`.
 - Installed `nfs-kernel-server` and `nfs-common` version `1:2.6.4-3ubuntu5.1`.
 - Configured internal NFS export `/srv/nfs/linux_shared` for the `192.168.56.0/24` management
