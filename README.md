@@ -23,14 +23,19 @@ The project demonstrates hands-on systems administration, infrastructure enginee
 
 - `Documentation/` - homelab notes, architecture, SOPs, troubleshooting, and server documentation.
 - `PowerShell/` - administration, reporting, monitoring, and test scripts.
+- `Windows/` - Windows administration tools such as Windows Admin Center and Sysinternals.
 - `Linux/` - Linux administration, SSH, Docker, Portainer, and Raspberry Pi work.
 - `Networking/` - tools and documentation for Nmap, Wireshark, pfSense, OPNsense, PuTTY, and Packet Tracer.
 - `Security/` - hardening, vulnerability scanning, Wazuh, and security documentation.
+- `Automation/` - Terraform, automation tooling, and future infrastructure-as-code work.
 - `Certifications/` - certification notes and study artifacts.
 
 ## Documentation Index
 
 - [Architecture](ARCHITECTURE.md)
+- [Homelab Documentation](Documentation/HomeLab/README.md)
+- [Homelab Master Plan](Documentation/HomeLab/Architecture/MASTER_PLAN.md)
+- [Homelab Network Baseline](Documentation/HomeLab/Architecture/NETWORK_BASELINE.md)
 - [API](API.md)
 - [Setup](SETUP.md)
 - [Roadmap](docs/ROADMAP.md)
@@ -41,6 +46,8 @@ The project demonstrates hands-on systems administration, infrastructure enginee
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Change Management](docs/CHANGE_MANAGEMENT.md)
 - [Evidence Standards](docs/EVIDENCE_STANDARDS.md)
+- [Software Inventory](docs/SOFTWARE_INVENTORY.md)
+- [Project Readiness](docs/PROJECT_READINESS.md)
 - [Codex Workstation Setup](docs/CODEX_SETUP.md)
 - [Interview Prep](docs/INTERVIEW_PREP.md)
 - [AI Prompting](docs/AI_PROMPTING.md)

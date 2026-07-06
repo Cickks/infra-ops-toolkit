@@ -26,6 +26,23 @@ Treat homelab changes like production changes. This makes the portfolio more cre
 ### Lessons Learned
 ```
 
+## Documentation Impact
+
+For every change, check whether these files need updates:
+
+- `README.md`
+- `ARCHITECTURE.md`
+- `docs/ROADMAP.md`
+- `docs/PHASE_TRACKER.md`
+- `docs/SERVER_INVENTORY.md`
+- `docs/IP_ADDRESSING.md`
+- `docs/EVIDENCE_STANDARDS.md`
+- `docs/SOFTWARE_INVENTORY.md`
+- `docs/OPERATIONS_RUNBOOK.md`
+- `CHANGELOG.md`
+
+Update all affected files in the same change so the portfolio stays coherent.
+
 ## Risk Levels
 
 | Level | Meaning | Examples |

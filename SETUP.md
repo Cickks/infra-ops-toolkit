@@ -28,13 +28,25 @@ git status
 gitleaks detect --no-git --source .
 ```
 
+## Primary Folders
+
+- `Documentation/HomeLab/` - homelab evidence and operational notes.
+- `Documentation/HomeLab/Architecture/` - master plan, network baseline, and design notes.
+- `Documentation/Server_Documentation/` - server-specific notes.
+- `Documentation/TroubleShooting/` - issue-specific troubleshooting notes.
+- `Windows/` - Windows administration tools and support utilities.
+- `Automation/` - Terraform and future automation tooling.
+- `docs/` - repo-level standards, roadmap, trackers, and guides.
+
 ## Documentation Workflow
 
 1. Add or update Markdown documentation.
 2. Keep diagrams and screenshots in relevant documentation folders.
-3. Avoid committing ISOs, installers, VM exports, or compressed binary downloads.
-4. Run a secret scan before commits.
-5. Update `CHANGELOG.md` for meaningful milestones.
+3. Update all related index, roadmap, tracker, architecture, and evidence files when the change affects them.
+4. Avoid committing ISOs, installers, VM exports, or compressed binary downloads.
+5. Update `docs/SOFTWARE_INVENTORY.md` when adding, moving, or replacing software.
+6. Run a secret scan before commits.
+7. Update `CHANGELOG.md` for meaningful milestones.
 
 ## Suggested VS Code Extensions
 

@@ -20,6 +20,12 @@ desktop.ini
 *password*
 *secret*
 *token*
+!**/*SECRET*.md
+!**/*Secret*.md
+!**/*secret*.md
+!**/*TOKEN*.md
+!**/*Token*.md
+!**/*token*.md
 
 # Logs and temporary files
 *.log
@@ -30,7 +36,6 @@ desktop.ini
 # Large binaries and installers
 Documentation/Downloads/
 ISOs/
-Networking/
 Linux/RaspberryPi/
 *.iso
 *.img
@@ -48,6 +53,8 @@ Linux/RaspberryPi/
 *.gz
 *.bz2
 *.xz
+!**/README.md
+!**/*.md
 
 # Generated reports
 reports/generated/

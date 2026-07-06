@@ -12,6 +12,21 @@ Portfolio evidence should prove real work without exposing secrets or creating n
 | Diagrams | Network and system architecture | Commit |
 | Installer/ISO inventory | Tool versions and sources | Commit as text metadata |
 | ISOs/installers/VM exports | Local toolkit storage | Do not commit |
+| Software inventory | Versions, source URLs, checksums, purpose | Commit |
+
+## Folder Placement
+
+| Evidence | Folder |
+| --- | --- |
+| Master plan and architecture | `../Documentation/HomeLab/Architecture/` |
+| Server notes | `../Documentation/Server_Documentation/<HOST>/` |
+| Client notes | `../Documentation/HomeLab/Clients/` |
+| Network notes | `../Documentation/HomeLab/Network/` |
+| Diagrams | `../Documentation/Network_Diagrams/` |
+| SOPs | `../Documentation/HomeLab/SOPs/` or `../Documentation/SOPs/` |
+| Troubleshooting | `../Documentation/TroubleShooting/<AREA>/` |
+| Screenshots | Relevant evidence folder, using descriptive filenames |
+| Software metadata | `SOFTWARE_INVENTORY.md` |
 
 ## Screenshot Naming
 

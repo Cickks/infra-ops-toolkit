@@ -25,6 +25,9 @@ Help build a realistic SMB-style IT environment and portfolio that demonstrates 
 
 - Use clear Markdown headings and tables.
 - Document the why, not just the command.
+- Update every related file when a change affects navigation, architecture, phase status, evidence routing, inventories, or standards.
+- Update `docs/SOFTWARE_INVENTORY.md` whenever installers, ISOs, archives, tooling folders, versions, source URLs, or checksums change.
+- Do not leave portfolio folders blank; add a README that explains the folder purpose and expected evidence.
 - Capture:
   - objective
   - prerequisites

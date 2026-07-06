@@ -6,6 +6,16 @@ The Enterprise Homelab simulates a realistic SMB IT environment for systems admi
 
 The lab is intentionally sequenced: infrastructure fundamentals come first, then security, monitoring, cloud, automation, DevOps, and AI. The future AI Steve platform should enhance operations only after the environment is understood and documented.
 
+## Documentation Map
+
+Use these files as the architecture source of truth:
+
+- `Documentation/HomeLab/Architecture/MASTER_PLAN.md` - homelab master plan summary and sequencing.
+- `Documentation/HomeLab/Architecture/NETWORK_BASELINE.md` - network, host, DNS, and DHCP baseline.
+- `docs/ROADMAP.md` - Enterprise Homelab Master Plan v12.0 summary.
+- `docs/PHASE_TRACKER.md` - current phase status and portfolio evidence checklist.
+- `docs/SERVER_INVENTORY.md` - server and client inventory.
+
 ## Design Philosophy
 
 - Build the foundation first.
@@ -41,6 +51,7 @@ The lab is intentionally sequenced: infrastructure fundamentals come first, then
 - Docker and Portainer.
 - Security hardening and monitoring.
 - Wazuh and vulnerability scanning.
+- Terraform and infrastructure-as-code for future cloud and automation phases.
 - Future automation and AI operations layers.
 
 ## Operational Model
@@ -67,3 +78,16 @@ Portfolio evidence should be stored as:
 - Change logs.
 
 Large binary artifacts should remain outside Git history.
+
+## Folder Routing
+
+Use these folders for portfolio evidence:
+
+- `Documentation/HomeLab/Architecture/` for architecture, master plan, and baseline design.
+- `Documentation/HomeLab/Servers/` and `Documentation/Server_Documentation/` for server evidence.
+- `Documentation/HomeLab/Clients/` for workstation and help desk evidence.
+- `Documentation/HomeLab/Network/` and `Documentation/Network_Diagrams/` for network notes and diagrams.
+- `Documentation/HomeLab/SOPs/` and `Documentation/SOPs/` for procedures.
+- `Documentation/TroubleShooting/` for issue-specific troubleshooting notes.
+- `Windows/` for Windows administration tooling.
+- `Automation/` for Terraform and future automation tooling.

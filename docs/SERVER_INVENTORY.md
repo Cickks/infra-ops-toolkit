@@ -19,8 +19,8 @@ This inventory captures known systems from the homelab master plan. Update it wh
 | `DHCP01` | TBD | DHCP server | Active/Planned | Serves client scope `192.168.50.100-199` |
 | `FILE01` | TBD | File server | Active/Planned | Used in PowerShell Remoting validation |
 | `PRINT01` | TBD | Print server | Active/Planned | Used in PowerShell Remoting validation |
-| `LINUX01` | TBD | Linux administration host | In Progress | Current Phase 11 focus |
-| `INFRA01` | TBD | Infrastructure services | Planned/Unknown | Confirm role before documenting |
+| `LINUX01` | Mgmt: `192.168.56.50`; Prod: `192.168.50.50`; NAT: `10.0.3.15` | Linux administration, Docker, Portainer, and Phase 12 self-hosting host | In Progress | Phase 12 kickoff active; shared services and backup baseline next |
+| `INFRA01` | Staging Wi-Fi: `192.168.1.133`; Future prod: `192.168.50.60` | Raspberry Pi infrastructure services host | Active/Staging | Phase 11.8 prep complete; SSH validated; microSD storage; future SSD before write-heavy services |
 
 ## Clients
 
