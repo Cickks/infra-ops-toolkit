@@ -2,6 +2,8 @@
 
 ## 2026-07-06
 
+- Added `-NoRsync` fallback support to `PowerShell/Scripts/Sync-PortfolioToLinux.ps1` after endpoint
+  controls blocked Chocolatey `rsync.exe` during the Phase 12.3 documentation sync.
 - Completed Phase 12.3 cron baseline on `LINUX01`.
 - Created `/opt/homelab/scripts/linux01-health-report.sh` and
   `/var/log/homelab/linux01-health-report.log`.

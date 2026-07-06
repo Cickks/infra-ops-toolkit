@@ -24,6 +24,11 @@ Sync to LINUX01 and INFRA01.
 .\Scripts\Sync-PortfolioToLinux.ps1 -IncludeInfra01 -UseRsync -DeleteRemote
 
 Force rsync mirror mode and delete remote files that no longer exist locally.
+
+.EXAMPLE
+.\Scripts\Sync-PortfolioToLinux.ps1 -NoRsync
+
+Use the tar/scp fallback when rsync is unavailable or blocked by endpoint controls.
 #>
 
 [CmdletBinding()]
@@ -34,6 +39,7 @@ param(
     [switch]$IncludeInfra01,
     [switch]$StageOnly,
     [switch]$UseRsync,
+    [switch]$NoRsync,
     [switch]$DeleteRemote
 )
 
@@ -134,11 +140,15 @@ function Resolve-RsyncTarget {
 Test-RequiredCommand "ssh.exe"
 
 $rsyncCommand = Get-Command "rsync.exe" -ErrorAction SilentlyContinue
+if ($UseRsync -and $NoRsync) {
+    throw "UseRsync and NoRsync cannot be used together."
+}
+
 if ($UseRsync -and -not $rsyncCommand) {
     throw "UseRsync requested, but rsync.exe was not found in PATH."
 }
 
-$shouldUseRsync = [bool]$rsyncCommand
+$shouldUseRsync = [bool]$rsyncCommand -and -not $NoRsync
 
 if ($shouldUseRsync) {
     Write-Host "Using rsync: $($rsyncCommand.Source)"
