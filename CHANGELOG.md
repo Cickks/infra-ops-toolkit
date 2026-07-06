@@ -24,8 +24,8 @@
 - Expanded the LocalOps Assistant vision beyond infrastructure chat: local operations support for
   homelab operations, documentation, help desk workflows, security, automation, career evidence,
   study, business automation, dashboard/voice interaction, and personal productivity.
-- Added `LocalOps Assistant/docs/AI_STEVE_VISION.md` and linked it from the LocalOps Assistant
-  README.
+- Added LocalOps Assistant product-vision and homelab-alignment documentation and linked it from the
+  LocalOps Assistant README.
 - Documented the INFRA01 lifecycle strategy: staged Raspberry Pi now, light use during Phase 12,
   monitoring/dashboard visibility later, main always-on services host around Phase 18 after SSD
   readiness, and LocalOps Assistant integration around Phase 22.
@@ -61,7 +61,7 @@
   login working, and local Docker environment visible.
 - Added a dashboard sub-plan covering a laptop/workstation dashboard first, INFRA01 visibility after
   Raspberry Pi setup, Pi-hosted dashboards after stable storage, monitoring integration, and future
-  LocalOps Assistant/LabTrack integration.
+  LocalOps Assistant or documentation automation integration.
 - Completed Phase 11.8 Raspberry Pi preparation for `INFRA01`: Raspberry Pi OS Lite installed on
   microSD, hostname `infra01`, Wi-Fi staging IP `192.168.1.133`, SSH validated from Windows,
   baseline system evidence captured, package updates applied, reboot tested, and future production

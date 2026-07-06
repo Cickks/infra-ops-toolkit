@@ -110,7 +110,7 @@ INFRA01, monitoring, and LocalOps Assistant.
 | Dashboard-2 | Add INFRA01 visibility         | Planned | After Raspberry Pi microSD setup, track hostname, IP, SSH status, storage state, and future service readiness |
 | Dashboard-3 | Pi-hosted dashboard            | Future  | Host on INFRA01 after storage is stable; heavier service hosting can wait until SSD upgrade                   |
 | Dashboard-4 | Monitoring integration         | Future  | Add Uptime Kuma, Grafana, Prometheus, and service checks during monitoring phases                             |
-| Dashboard-5 | LocalOps Assistant integration | Future  | Feed dashboard/service inventory into LocalOps Assistant, LabTrack, or documentation automation later         |
+| Dashboard-5 | LocalOps Assistant integration | Future  | Feed dashboard/service inventory into LocalOps Assistant or documentation automation later                    |
 
 Initial dashboard fields:
 
