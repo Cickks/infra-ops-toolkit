@@ -636,6 +636,101 @@ Rollback:
 - Stop and disable `nfs-server` if the service must be removed from the host.
 - Restore `/root/phase12-backups/exports.pre-phase12-2` if the export file must be reverted.
 
+## Phase 12.4 Custom systemd Service Complete
+
+Date validated: 2026-07-07 UTC
+
+Objective:
+
+- Create a simple custom `systemd` service on `LINUX01`.
+- Validate service account usage, unit-file syntax, service lifecycle controls, logging, enablement,
+  and reboot persistence.
+
+Implemented artifacts:
+
+| Artifact        | Path / Value                                             |
+| --------------- | -------------------------------------------------------- |
+| Service account | `homelabsvc`                                             |
+| Script          | `/opt/homelab/scripts/linux01-systemd-heartbeat.sh`      |
+| Unit file       | `/etc/systemd/system/linux01-systemd-heartbeat.service`  |
+| Service name    | `linux01-systemd-heartbeat.service`                      |
+| Log file        | `/var/log/homelab/systemd/linux01-systemd-heartbeat.log` |
+
+Validated behavior:
+
+- Script syntax check passed.
+- Script ran successfully as `homelabsvc`.
+- `systemd-analyze verify` passed.
+- `systemctl start`, `restart`, `stop`, and `enable` were validated.
+- `systemctl is-enabled` returned `enabled`.
+- `systemctl is-active` returned `active`.
+- Journald captured service startup and heartbeat output.
+- File logging wrote heartbeat entries.
+- After reboot, the service started automatically and remained active.
+
+Operational result:
+
+- Phase 12.4 is complete.
+- `LINUX01` now has a documented custom service-management training artifact.
+- No new network ports were opened.
+- No Docker, Samba, NFS, SSH, cron, storage, or `INFRA01` settings were changed.
+
+Rollback:
+
+```bash
+sudo systemctl disable --now linux01-systemd-heartbeat.service
+sudo rm /etc/systemd/system/linux01-systemd-heartbeat.service
+sudo systemctl daemon-reload
+sudo systemctl reset-failed
+sudo rm /opt/homelab/scripts/linux01-systemd-heartbeat.sh
+sudo rm -f /var/log/homelab/systemd/linux01-systemd-heartbeat.log
+```
+
+## Phase 12.6 Linux Backup And Restore Validation Complete
+
+Date validated: 2026-07-07 UTC
+
+Objective:
+
+- Create and validate a local backup of `LINUX01` configuration and small service data before moving
+  toward the first real self-hosted app decision.
+
+Backup artifact:
+
+| Item          | Value                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------- |
+| Archive       | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz`          |
+| Checksum file | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz.sha256`   |
+| Manifest file | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz.manifest` |
+| Archive size  | `653K`                                                                                  |
+| Entry count   | `1801`                                                                                  |
+
+Backup scope:
+
+- `/etc`
+- `/srv`
+- `/opt/homelab`
+- `/var/log/homelab`
+
+Restore validation:
+
+- Restored selected files and directories to `/tmp/phase12-6-restore-test`.
+- Confirmed Samba config, NFS exports, cron file, and custom systemd unit were present.
+- Confirmed `/srv`, `/opt/homelab`, and `/var/log/homelab` content restored.
+- `sha256sum -c` returned `OK`.
+- Temporary restore directory was removed after validation.
+
+Post-change validation:
+
+- Root filesystem remained `35%` used with about `15G` available.
+- `ssh`, `docker`, `containerd`, `smbd`, `nfs-server`, `cron`, and
+  `linux01-systemd-heartbeat.service` remained active.
+
+Operational result:
+
+- Phase 12.6 is complete as a local backup and restore proof.
+- Off-host backup copy and retention remain future maturity work before heavier applications.
+
 ## Phase 11.5 Linux Networking Validation
 
 Date validated: 2026-06-29
