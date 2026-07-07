@@ -648,13 +648,13 @@ Objective:
 
 Implemented artifacts:
 
-| Artifact | Path / Value |
-| -------- | ------------ |
-| Service account | `homelabsvc` |
-| Script | `/opt/homelab/scripts/linux01-systemd-heartbeat.sh` |
-| Unit file | `/etc/systemd/system/linux01-systemd-heartbeat.service` |
-| Service name | `linux01-systemd-heartbeat.service` |
-| Log file | `/var/log/homelab/systemd/linux01-systemd-heartbeat.log` |
+| Artifact        | Path / Value                                             |
+| --------------- | -------------------------------------------------------- |
+| Service account | `homelabsvc`                                             |
+| Script          | `/opt/homelab/scripts/linux01-systemd-heartbeat.sh`      |
+| Unit file       | `/etc/systemd/system/linux01-systemd-heartbeat.service`  |
+| Service name    | `linux01-systemd-heartbeat.service`                      |
+| Log file        | `/var/log/homelab/systemd/linux01-systemd-heartbeat.log` |
 
 Validated behavior:
 

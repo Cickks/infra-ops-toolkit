@@ -31,15 +31,15 @@ Objective:
 
 Systems affected:
 
-| Item | Value |
-| ---- | ----- |
-| Host | `LINUX01` |
-| Service account | `homelabsvc` |
-| Script | `/opt/homelab/scripts/linux01-systemd-heartbeat.sh` |
-| Unit file | `/etc/systemd/system/linux01-systemd-heartbeat.service` |
-| Log directory | `/var/log/homelab/systemd` |
-| Log file | `/var/log/homelab/systemd/linux01-systemd-heartbeat.log` |
-| Service name | `linux01-systemd-heartbeat.service` |
+| Item            | Value                                                    |
+| --------------- | -------------------------------------------------------- |
+| Host            | `LINUX01`                                                |
+| Service account | `homelabsvc`                                             |
+| Script          | `/opt/homelab/scripts/linux01-systemd-heartbeat.sh`      |
+| Unit file       | `/etc/systemd/system/linux01-systemd-heartbeat.service`  |
+| Log directory   | `/var/log/homelab/systemd`                               |
+| Log file        | `/var/log/homelab/systemd/linux01-systemd-heartbeat.log` |
+| Service name    | `linux01-systemd-heartbeat.service`                      |
 
 Risk:
 
@@ -102,20 +102,20 @@ WantedBy=multi-user.target
 
 Validation evidence:
 
-| Check | Result |
-| ----- | ------ |
-| Script syntax | Passed |
-| Manual script run as `homelabsvc` | Passed |
-| File log write | Passed |
-| `systemd-analyze verify` | Passed |
-| `systemctl start` | Passed |
-| `systemctl restart` | Passed |
-| `systemctl stop` | Passed |
-| `systemctl enable` | Passed |
-| `systemctl is-enabled` | `enabled` |
-| `systemctl is-active` | `active` |
-| Journald logging | Passed |
-| Reboot persistence | Passed |
+| Check                             | Result    |
+| --------------------------------- | --------- |
+| Script syntax                     | Passed    |
+| Manual script run as `homelabsvc` | Passed    |
+| File log write                    | Passed    |
+| `systemd-analyze verify`          | Passed    |
+| `systemctl start`                 | Passed    |
+| `systemctl restart`               | Passed    |
+| `systemctl stop`                  | Passed    |
+| `systemctl enable`                | Passed    |
+| `systemctl is-enabled`            | `enabled` |
+| `systemctl is-active`             | `active`  |
+| Journald logging                  | Passed    |
+| Reboot persistence                | Passed    |
 
 Rollback plan:
 
