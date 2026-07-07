@@ -636,6 +636,56 @@ Rollback:
 - Stop and disable `nfs-server` if the service must be removed from the host.
 - Restore `/root/phase12-backups/exports.pre-phase12-2` if the export file must be reverted.
 
+## Phase 12.4 Custom systemd Service Complete
+
+Date validated: 2026-07-07 UTC
+
+Objective:
+
+- Create a simple custom `systemd` service on `LINUX01`.
+- Validate service account usage, unit-file syntax, service lifecycle controls, logging, enablement,
+  and reboot persistence.
+
+Implemented artifacts:
+
+| Artifact | Path / Value |
+| -------- | ------------ |
+| Service account | `homelabsvc` |
+| Script | `/opt/homelab/scripts/linux01-systemd-heartbeat.sh` |
+| Unit file | `/etc/systemd/system/linux01-systemd-heartbeat.service` |
+| Service name | `linux01-systemd-heartbeat.service` |
+| Log file | `/var/log/homelab/systemd/linux01-systemd-heartbeat.log` |
+
+Validated behavior:
+
+- Script syntax check passed.
+- Script ran successfully as `homelabsvc`.
+- `systemd-analyze verify` passed.
+- `systemctl start`, `restart`, `stop`, and `enable` were validated.
+- `systemctl is-enabled` returned `enabled`.
+- `systemctl is-active` returned `active`.
+- Journald captured service startup and heartbeat output.
+- File logging wrote heartbeat entries.
+- After reboot, the service started automatically and remained active.
+
+Operational result:
+
+- Phase 12.4 is complete.
+- `LINUX01` now has a documented custom service-management training artifact.
+- No new network ports were opened.
+- No Docker, Samba, NFS, SSH, cron, storage, or `INFRA01` settings were changed.
+
+Rollback:
+
+```bash
+sudo systemctl disable --now linux01-systemd-heartbeat.service
+sudo rm /etc/systemd/system/linux01-systemd-heartbeat.service
+sudo systemctl daemon-reload
+sudo systemctl reset-failed
+sudo rm /opt/homelab/scripts/linux01-systemd-heartbeat.sh
+sudo rm -f /var/log/homelab/systemd/linux01-systemd-heartbeat.log
+```
+
 ## Phase 11.5 Linux Networking Validation
 
 Date validated: 2026-06-29

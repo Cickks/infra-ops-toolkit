@@ -12,3 +12,10 @@ Each script should include:
 - Rollback or safety notes.
 
 Run scripts in a lab-safe context before documenting them as portfolio-ready.
+
+## Available Scripts
+
+| Script | Purpose | Safety Notes |
+| ------ | ------- | ------------ |
+| `Sync-PortfolioToLinux.ps1` | Syncs `C:\Portfilio` to Linux hosts over SSH. | Remote deletes require explicit `-DeleteRemote`. |
+| `Sync-PortfolioToLabUsb.ps1` | Copies `C:\Portfilio` to the USB drive labeled `LAB STUFF`. | USB deletes are disabled by default; `-Mirror` must be explicit. |

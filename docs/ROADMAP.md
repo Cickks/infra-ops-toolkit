@@ -31,7 +31,7 @@ Supporting software inventory:
 - Current status from source document: Phase 12 in progress.
 - Current focus: `LINUX01` advanced Linux practice through backups, first app planning,
   documentation platform planning, then dedicated `INFRA01` production readiness.
-- Recently completed: Phase 11.9 enterprise hardening and environment validation.
+- Recently completed: Phase 12.4 custom systemd service validation on `LINUX01`.
 
 ## Mission
 
@@ -77,8 +77,8 @@ Primary order:
 3. Build Samba for Windows/Linux file-sharing practice. Complete.
 4. Build NFS for Linux-to-Linux sharing and future container/storage concepts. Complete.
 5. Create cron jobs for scheduled maintenance and reporting. Complete.
-6. Create a custom systemd service to prove service lifecycle management. Next.
-7. Expand SSH key authentication and portfolio sync to `INFRA01`.
+6. Create a custom systemd service to prove service lifecycle management. Complete.
+7. Expand SSH key authentication and portfolio sync to `INFRA01`. Next.
 8. Build Linux backup and restore validation.
 9. Choose one first self-hosted app with a documented change plan.
 10. Plan the enterprise documentation platform after backups and first-app decision are understood.
