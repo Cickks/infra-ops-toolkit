@@ -57,8 +57,8 @@ Recommended sequence:
 | 12.2     | NFS baseline                      | Complete    | Internal NFS export `/srv/nfs/linux_shared` validated on `LINUX01`; package install, export config, ports `111/2049`, mount, write/read/delete, unmount, cleanup, and rollback notes complete |
 | 12.3     | Cron jobs                         | Complete    | `LINUX01` daily health report script created, manually validated, temporarily scheduled every 5 minutes for cron validation, then changed to daily at `06:15 UTC`                             |
 | 12.4     | Custom systemd services           | Complete    | `linux01-systemd-heartbeat.service` created on `LINUX01`; service account, script, unit file, journald/file logging, lifecycle commands, enablement, rollback, and reboot validation complete |
-| 12.5     | SSH key expansion                 | Planned     | Add `INFRA01` key auth and complete portfolio sync workflow                                                                                                                                   |
-| 12.6     | Linux backups                     | Planned     | Back up configs, service data, and documentation with restore validation                                                                                                                      |
+| 12.5     | SSH key expansion                 | Complete    | `INFRA01` key auth, `infra01` alias, SCP transfer test, and safe portfolio sync with `-Targets infra01 -NoRsync` validated                                                                    |
+| 12.6     | Linux backups                     | Complete    | Local backup of `/etc`, `/srv`, `/opt/homelab`, and `/var/log/homelab` created on `LINUX01`; checksum, manifest, restore test, service validation, and cleanup passed                         |
 | 12.7     | First self-hosted app decision    | Planned     | Choose one starter app after shared-service and backup basics are proven                                                                                                                      |
 | 12.8     | Enterprise documentation platform | Planned     | Choose BookStack or Wiki.js first; document SOPs, server builds, troubleshooting guides, change logs, incidents, rollback, ports, and backup/restore tests                                    |
 
@@ -362,11 +362,13 @@ Initial validation:
 | `LINUX01` size     | About 15 MB after excluding large binaries, build outputs, caches, `.git`, `node_modules`, and temporary files |
 | Linux file viewing | `README.md` and `PHASE_TRACKER.md` readable with shell tools                                                   |
 | Exclusion check    | `.git`, `node_modules`, and `dist` excluded successfully                                                       |
-| `INFRA01`          | Pending; SSH key authentication is not configured yet                                                          |
+| `INFRA01`          | Complete; SSH key authentication, `infra01` alias, SCP transfer, and safe create/update sync validated          |
 
-Next improvement:
+Current improvement:
 
-- Add SSH key authentication to `INFRA01`, then run the same sync with `-IncludeInfra01`.
+- SSH key authentication to `INFRA01` is complete.
+- Direct `infra01` target sync with `-NoRsync` is validated.
+- Continue avoiding `-DeleteRemote` until backup and restore workflows are proven.
 
 ## Folder Targets
 

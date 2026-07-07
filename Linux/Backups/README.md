@@ -62,3 +62,54 @@ Minimum restore test:
 - Why databases often need app-aware backups.
 - Why backup archives should not be stored in Git.
 - How retention and restore testing reduce outage risk.
+
+## Phase 12.6 LINUX01 Backup And Restore Validation
+
+Date validated: 2026-07-07
+
+Objective:
+
+- Back up `LINUX01` configuration and small service data.
+- Generate checksum and manifest evidence.
+- Restore selected content to a temporary location without overwriting production paths.
+- Validate core services after the backup and restore test.
+
+Backup artifact:
+
+```text
+/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz
+```
+
+Backup scope:
+
+- `/etc`
+- `/srv`
+- `/opt/homelab`
+- `/var/log/homelab`
+
+Validation results:
+
+| Check             | Result                                                                 |
+| ----------------- | ---------------------------------------------------------------------- |
+| Archive size      | `653K`                                                                 |
+| Manifest size     | `56K`                                                                  |
+| Archive entries   | `1801`                                                                 |
+| SHA256 validation | `OK`                                                                   |
+| Restore target    | `/tmp/phase12-6-restore-test`                                          |
+| Disk after test   | `/` remained `35%` used with about `15G` available                     |
+| Cleanup           | Temporary restore directory removed                                    |
+| Services          | `ssh`, `docker`, `containerd`, `smbd`, `nfs-server`, `cron`, heartbeat active |
+
+Restore checks:
+
+- `etc/samba/smb.conf` present.
+- `etc/exports` present.
+- `etc/cron.d/linux01-health-report` present.
+- `etc/systemd/system/linux01-systemd-heartbeat.service` present.
+- `/srv`, `/opt/homelab`, and `/var/log/homelab` content present.
+
+Operational note:
+
+- The backup archive is stored locally on `LINUX01`. This proves the backup and restore process, but
+  it is not full disaster recovery. The next maturity step is off-host backup copy and retention
+  planning.

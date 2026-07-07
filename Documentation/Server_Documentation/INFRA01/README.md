@@ -6,9 +6,9 @@ Role: Raspberry Pi infrastructure services host.
 
 | Item           | Status                                                                                                                            |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Phase          | 11.8                                                                                                                              |
-| Area           | Raspberry Pi preparation, production readiness, and future infrastructure services                                                |
-| Evidence state | Raspberry Pi OS Lite, Wi-Fi, SSH, update, reboot, storage, and baseline validation complete; production-readiness upgrade planned |
+| Phase          | 12.5                                                                                                                              |
+| Area           | Raspberry Pi preparation, SSH key expansion, production readiness planning, and future infrastructure services                    |
+| Evidence state | Raspberry Pi OS Lite, Wi-Fi, SSH, update, reboot, storage, baseline validation, SSH key auth, and portfolio sync validation complete; production-readiness upgrade planned |
 | Related docs   | `../../../docs/ROADMAP.md`, `../../../docs/SERVER_INVENTORY.md`, `../../../Linux/ProductionReadiness/INFRA01_RUNBOOK.md`          |
 
 ## Notes
@@ -138,6 +138,37 @@ Network note:
 - `INFRA01` is currently on the home Wi-Fi staging network, not the `corp.local` production subnet.
 - Do not assign `192.168.50.60` until the Pi is connected to a network where `192.168.50.0/24` is
   valid.
+
+## Phase 12.5 SSH Key Expansion
+
+Date validated: 2026-07-07
+
+Objective:
+
+- Validate `INFRA01` as an SSH key-authenticated administration target while keeping it in staging.
+- Confirm safe documentation sync without starting Phase 12.0B production readiness.
+
+Validation:
+
+- Windows `Test-NetConnection 192.168.1.133 -Port 22` passed from source `192.168.1.182`.
+- Password SSH to `michael@192.168.1.133` succeeded before key changes.
+- Existing Windows public key was added to `/home/michael/.ssh/authorized_keys`.
+- `infra01` SSH alias was added and validated.
+- BatchMode SSH returned hostname `infra01` and user `michael`.
+- SCP transfer test succeeded and the remote test file was removed after readback.
+- Safe portfolio sync succeeded with `-Targets infra01 -NoRsync`.
+- `/home/michael/Portfolio` reported `22M` after sync.
+
+Rollback:
+
+- Remove the added public key from `/home/michael/.ssh/authorized_keys` if key access must be
+  retired.
+- Remove or comment the Windows `Host infra01` SSH client block.
+- Continue using password or console access while troubleshooting.
+
+Boundary:
+
+- No storage, Docker, Portainer, static production IP, NVMe, or service-hosting change was performed.
 
 ## Planning Commands
 

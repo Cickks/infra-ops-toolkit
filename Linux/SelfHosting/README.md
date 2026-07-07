@@ -81,8 +81,8 @@ Decision:
 | 2     | NFS           | Teaches Linux-to-Linux storage and future container/storage patterns      |
 | 3     | Cron          | Teaches scheduled maintenance, reporting, and recurring operations        |
 | 4     | systemd       | Teaches service lifecycle, boot behavior, logs, and unit-file discipline  |
-| 5     | SSH keys      | Completes reliable admin access to `INFRA01` and sync workflows           |
-| 6     | Linux backups | Protects configs and service data before real apps arrive                 |
+| 5     | SSH keys      | Complete; reliable admin access to `INFRA01` and sync workflow validated  |
+| 6     | Linux backups | Complete; config and small service-data backup with restore test passed   |
 | 7     | First app     | Adds a real internal app after rollback and backup paths exist            |
 
 ## First App Decision
@@ -134,7 +134,85 @@ For each service, record:
 - NFS validated from a Linux client.
 - At least one cron job runs and logs successfully.
 - At least one custom systemd service starts, stops, restarts, enables, and logs correctly.
-- SSH key auth works to `INFRA01`.
-- Linux config and service data backup runs successfully.
-- At least one restore test is completed.
+- SSH key auth works to `INFRA01`. Complete on 2026-07-07.
+- Linux config and service data backup runs successfully. Complete on 2026-07-07.
+- At least one restore test is completed. Complete on 2026-07-07.
 - One first self-hosted app is selected with a documented change plan.
+
+## Phase 12.5 SSH Key Expansion
+
+Date validated: 2026-07-07
+
+Objective:
+
+- Expand reliable SSH administration to `INFRA01` without starting full `INFRA01` production
+  readiness.
+- Validate a safe portfolio sync workflow for documentation availability.
+
+Validation:
+
+- `INFRA01` staging IP `192.168.1.133` responded on TCP `22` from Windows source `192.168.1.182`.
+- Password SSH worked before key changes.
+- Public key authentication was added and validated with BatchMode SSH.
+- Windows SSH alias `infra01` was validated.
+- SCP transfer, remote readback, and cleanup succeeded.
+- Portfolio sync to `INFRA01` succeeded with:
+
+```powershell
+& "C:\Portfilio\IT-ENGINEER-TOOLKIT\PowerShell\Scripts\Sync-PortfolioToLinux.ps1" -Targets infra01 -NoRsync
+```
+
+Result:
+
+- `/home/michael/Portfolio` on `INFRA01` reported `22M` after sync.
+- Remote sync used create/update behavior only.
+- `-DeleteRemote` was not used.
+
+Boundary:
+
+- No Docker, Portainer, NVMe, static production IP, service hosting, or storage changes were made on
+  `INFRA01`.
+
+## Phase 12.6 Linux Backup And Restore Validation
+
+Date validated: 2026-07-07
+
+Objective:
+
+- Create a local backup of important `LINUX01` configuration and small service data.
+- Validate archive integrity and prove restore to a temporary non-production location.
+
+Backup scope:
+
+- `/etc`
+- `/srv`
+- `/opt/homelab`
+- `/var/log/homelab`
+
+Result:
+
+- Backup archive: `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz`
+- Archive size: `653K`.
+- Manifest size: `56K`.
+- Archive entries: `1801`.
+- SHA256 validation returned `OK`.
+- Restore test path: `/tmp/phase12-6-restore-test`.
+- Temporary restore content was removed after validation.
+
+Restore checks passed:
+
+- Samba config restored.
+- NFS exports restored.
+- Cron health-report file restored.
+- Custom systemd unit restored.
+- `/srv`, `/opt/homelab`, and `/var/log/homelab` content restored.
+
+Post-change validation:
+
+- Root filesystem remained at `35%` used with about `15G` available.
+- `ssh`, `docker`, `containerd`, `smbd`, `nfs-server`, `cron`, and
+  `linux01-systemd-heartbeat.service` remained active.
+
+Limitation:
+
+- This is a local backup proof-of-process. It does not replace off-host disaster recovery.
