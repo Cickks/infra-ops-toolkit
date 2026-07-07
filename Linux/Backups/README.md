@@ -89,15 +89,15 @@ Backup scope:
 
 Validation results:
 
-| Check             | Result                                                                 |
-| ----------------- | ---------------------------------------------------------------------- |
-| Archive size      | `653K`                                                                 |
-| Manifest size     | `56K`                                                                  |
-| Archive entries   | `1801`                                                                 |
-| SHA256 validation | `OK`                                                                   |
-| Restore target    | `/tmp/phase12-6-restore-test`                                          |
-| Disk after test   | `/` remained `35%` used with about `15G` available                     |
-| Cleanup           | Temporary restore directory removed                                    |
+| Check             | Result                                                                        |
+| ----------------- | ----------------------------------------------------------------------------- |
+| Archive size      | `653K`                                                                        |
+| Manifest size     | `56K`                                                                         |
+| Archive entries   | `1801`                                                                        |
+| SHA256 validation | `OK`                                                                          |
+| Restore target    | `/tmp/phase12-6-restore-test`                                                 |
+| Disk after test   | `/` remained `35%` used with about `15G` available                            |
+| Cleanup           | Temporary restore directory removed                                           |
 | Services          | `ssh`, `docker`, `containerd`, `smbd`, `nfs-server`, `cron`, heartbeat active |
 
 Restore checks:

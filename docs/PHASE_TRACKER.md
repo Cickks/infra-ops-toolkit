@@ -362,7 +362,7 @@ Initial validation:
 | `LINUX01` size     | About 15 MB after excluding large binaries, build outputs, caches, `.git`, `node_modules`, and temporary files |
 | Linux file viewing | `README.md` and `PHASE_TRACKER.md` readable with shell tools                                                   |
 | Exclusion check    | `.git`, `node_modules`, and `dist` excluded successfully                                                       |
-| `INFRA01`          | Complete; SSH key authentication, `infra01` alias, SCP transfer, and safe create/update sync validated          |
+| `INFRA01`          | Complete; SSH key authentication, `infra01` alias, SCP transfer, and safe create/update sync validated         |
 
 Current improvement:
 

@@ -4,12 +4,12 @@ Role: Raspberry Pi infrastructure services host.
 
 ## Portfolio Status
 
-| Item           | Status                                                                                                                            |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Phase          | 12.5                                                                                                                              |
-| Area           | Raspberry Pi preparation, SSH key expansion, production readiness planning, and future infrastructure services                    |
+| Item           | Status                                                                                                                                                                     |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Phase          | 12.5                                                                                                                                                                       |
+| Area           | Raspberry Pi preparation, SSH key expansion, production readiness planning, and future infrastructure services                                                             |
 | Evidence state | Raspberry Pi OS Lite, Wi-Fi, SSH, update, reboot, storage, baseline validation, SSH key auth, and portfolio sync validation complete; production-readiness upgrade planned |
-| Related docs   | `../../../docs/ROADMAP.md`, `../../../docs/SERVER_INVENTORY.md`, `../../../Linux/ProductionReadiness/INFRA01_RUNBOOK.md`          |
+| Related docs   | `../../../docs/ROADMAP.md`, `../../../docs/SERVER_INVENTORY.md`, `../../../Linux/ProductionReadiness/INFRA01_RUNBOOK.md`                                                   |
 
 ## Notes
 
@@ -168,7 +168,8 @@ Rollback:
 
 Boundary:
 
-- No storage, Docker, Portainer, static production IP, NVMe, or service-hosting change was performed.
+- No storage, Docker, Portainer, static production IP, NVMe, or service-hosting change was
+  performed.
 
 ## Planning Commands
 

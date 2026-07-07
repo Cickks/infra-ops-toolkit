@@ -692,18 +692,18 @@ Date validated: 2026-07-07 UTC
 
 Objective:
 
-- Create and validate a local backup of `LINUX01` configuration and small service data before
-  moving toward the first real self-hosted app decision.
+- Create and validate a local backup of `LINUX01` configuration and small service data before moving
+  toward the first real self-hosted app decision.
 
 Backup artifact:
 
-| Item          | Value                                                                 |
-| ------------- | --------------------------------------------------------------------- |
-| Archive       | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz` |
-| Checksum file | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz.sha256` |
+| Item          | Value                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------- |
+| Archive       | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz`          |
+| Checksum file | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz.sha256`   |
 | Manifest file | `/var/backups/homelab/phase12-6/linux01-config-service-20260707-215146.tar.gz.manifest` |
-| Archive size  | `653K`                                                                |
-| Entry count   | `1801`                                                                |
+| Archive size  | `653K`                                                                                  |
+| Entry count   | `1801`                                                                                  |
 
 Backup scope:
 
