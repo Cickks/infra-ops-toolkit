@@ -31,7 +31,8 @@ Supporting software inventory:
 - Current status from source document: Phase 12 in progress.
 - Current focus: `LINUX01` advanced Linux practice through backups, first app planning,
   documentation platform planning, then dedicated `INFRA01` production readiness.
-- Recently completed: Phase 12.6 Linux backup and restore validation on `LINUX01`.
+- Recently completed: Phase 12.7 Gitea first self-hosted app deployment, Git workflow validation,
+  backup, checksum, manifest, and restore test on `LINUX01`.
 
 ## Mission
 
@@ -80,7 +81,8 @@ Primary order:
 6. Create a custom systemd service to prove service lifecycle management. Complete.
 7. Expand SSH key authentication and portfolio sync to `INFRA01`. Complete.
 8. Build Linux backup and restore validation. Complete.
-9. Choose one first self-hosted app with a documented change plan. Next.
+9. Choose one first self-hosted app with a documented change plan. Complete with Gitea on
+   `LINUX01`.
 10. Plan the enterprise documentation platform after backups and first-app decision are understood.
 11. Prepare `INFRA01` hardware before services as a dedicated production-readiness change: NVMe HAT,
     1TB NVMe SSD, active cooling, OS updates, SSH, static IP/DHCP reservation, SSD mount, Docker
@@ -88,8 +90,8 @@ Primary order:
 
 First-app order:
 
-1. Gitea: recommended first app after Linux backups because it has strong career value for Git,
-   repositories, service ownership, persistence, updates, and backup/restore practice.
+1. Gitea: complete as the first app on `LINUX01`; validated web UI, private repository creation,
+   HTTP Git push, backup, checksum, manifest, and restore test.
 2. Vaultwarden: recommended after backup and security process is proven because it handles secrets
    and requires stronger operational discipline.
 3. Nextcloud: defer until storage and restore process are stronger because it is storage-heavy and

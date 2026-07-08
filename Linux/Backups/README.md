@@ -113,3 +113,43 @@ Operational note:
 - The backup archive is stored locally on `LINUX01`. This proves the backup and restore process, but
   it is not full disaster recovery. The next maturity step is off-host backup copy and retention
   planning.
+
+## Phase 12.7 Gitea Backup And Restore Validation
+
+Date validated: 2026-07-08
+
+Objective:
+
+- Back up the first self-hosted app after Gitea was installed and validated.
+- Stop Gitea before archive creation so the SQLite database is captured consistently.
+- Validate archive integrity and prove restore to a temporary non-production location.
+
+Backup artifact:
+
+```text
+/var/backups/homelab/phase12-7/gitea-service-20260708.tar.gz
+```
+
+Backup scope:
+
+- `/srv/gitea/docker-compose.yml`
+- `/srv/gitea/data`
+- `/srv/gitea/data/gitea/conf/app.ini`
+- Gitea repository data under `/srv/gitea/data/git/repositories`
+
+Validation results:
+
+| Check             | Result                                      |
+| ----------------- | ------------------------------------------- |
+| SHA256 validation | `OK`                                        |
+| Manifest          | Created                                     |
+| Restore target    | `/tmp/phase12-7-gitea-restore-test`         |
+| Restored compose  | `docker-compose.yml` present                |
+| Restored config   | `app.ini` present                           |
+| Cleanup           | Temporary restore directory removed         |
+| Service check     | Gitea restarted and TCP `3000` remained up  |
+
+Operational note:
+
+- This remains a local backup proof. Off-host copy, retention, and scheduled backups are future
+  maturity work before heavier or production-style services depend on Gitea.

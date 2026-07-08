@@ -47,7 +47,8 @@ yet:
 | Tool                  | Detected Version | Notes                                                                                |
 | --------------------- | ---------------- | ------------------------------------------------------------------------------------ |
 | Docker Engine         | 29.6.1           | Server-side container runtime installed from Docker official Ubuntu Noble repository |
-| Docker Compose plugin | v5.2.0           | Compose workflow support on `LINUX01`                                                |
+| Docker Compose plugin | v5.3.0           | Compose workflow support on `LINUX01` after Phase 12 package maintenance             |
+| Gitea container       | 1.26.4           | First self-hosted app on `LINUX01`; image `docker.gitea.com/gitea:1.26.4`            |
 
 ## Download Rules
 

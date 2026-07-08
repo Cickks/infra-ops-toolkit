@@ -83,7 +83,7 @@ Decision:
 | 4     | systemd       | Teaches service lifecycle, boot behavior, logs, and unit-file discipline  |
 | 5     | SSH keys      | Complete; reliable admin access to `INFRA01` and sync workflow validated  |
 | 6     | Linux backups | Complete; config and small service-data backup with restore test passed   |
-| 7     | First app     | Adds a real internal app after rollback and backup paths exist            |
+| 7     | First app     | Complete; Gitea deployed and validated on `LINUX01`                       |
 
 ## First App Decision
 
@@ -98,6 +98,54 @@ Recommended first candidates:
 | Home Assistant | Later                         | Best when there is a clear hardware or automation goal                                                        |
 
 Default recommendation: build Gitea first after the Phase 12 Linux basics are complete.
+
+## Phase 12.7 Gitea First Self-Hosted App
+
+Date validated: 2026-07-08
+
+Objective:
+
+- Select and deploy the first self-hosted app after Samba, NFS, cron, systemd, SSH keys, and Linux
+  backup basics were proven.
+- Keep the first deployment on `LINUX01` as the safe staging and practice host.
+- Keep `INFRA01` out of production service hosting until SSD storage, Docker data placement,
+  backups, monitoring, and rollback are documented.
+
+Deployment:
+
+| Item           | Value                                           |
+| -------------- | ----------------------------------------------- |
+| App            | Gitea                                           |
+| Host           | `LINUX01`                                       |
+| URL            | `http://192.168.56.50:3000`                     |
+| Container      | `gitea`                                         |
+| Image          | `docker.gitea.com/gitea:1.26.4`                 |
+| Compose path   | `/srv/gitea/docker-compose.yml`                 |
+| Persistent data| `/srv/gitea/data`                               |
+| Database       | SQLite3                                         |
+| Git SSH        | Deferred; no host SSH port published for Gitea  |
+
+Validation:
+
+- TCP `3000` passed from Windows source `192.168.56.1`.
+- Gitea web UI loaded and admin login succeeded.
+- Private repository `michael/homelab-gitea-validation` was created.
+- HTTP Git push to `main` succeeded from Windows.
+- Backup archive, checksum, and manifest were created.
+- Restore test extracted the backup to `/tmp/phase12-7-gitea-restore-test` and confirmed
+  `docker-compose.yml` and `app.ini` restored before cleanup.
+
+Backup artifact:
+
+```text
+/var/backups/homelab/phase12-7/gitea-service-20260708.tar.gz
+```
+
+Operational result:
+
+- Phase 12.7 is complete.
+- `LINUX01` now hosts the first internal self-hosted application.
+- `INFRA01` remains staging-only.
 
 ## Standard Change Template
 
@@ -137,7 +185,8 @@ For each service, record:
 - SSH key auth works to `INFRA01`. Complete on 2026-07-07.
 - Linux config and service data backup runs successfully. Complete on 2026-07-07.
 - At least one restore test is completed. Complete on 2026-07-07.
-- One first self-hosted app is selected with a documented change plan.
+- One first self-hosted app is selected with a documented change plan. Complete on 2026-07-08 with
+  Gitea on `LINUX01`.
 
 ## Phase 12.5 SSH Key Expansion
 

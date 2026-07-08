@@ -8,7 +8,7 @@ Role: Linux administration fundamentals host and current Phase 11 focus.
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Phase          | 12                                                                                                                                                                                          |
 | Area           | Advanced Linux and self-hosting                                                                                                                                                             |
-| Evidence state | Phase 11 complete; Phase 12 kickoff active                                                                                                                                                  |
+| Evidence state | Phase 11 complete; Phase 12.7 Gitea first self-hosted app complete                                                                                                                          |
 | Related docs   | `../../../Linux/Documentation/README.md`, `../../../Linux/Docker/README.md`, `../../../Linux/Portainer/README.md`, `../../../Linux/SelfHosting/README.md`, `../../../docs/PHASE_TRACKER.md` |
 
 ## Notes
@@ -730,6 +730,51 @@ Operational result:
 
 - Phase 12.6 is complete as a local backup and restore proof.
 - Off-host backup copy and retention remain future maturity work before heavier applications.
+
+## Phase 12.7 Gitea First Self-Hosted App Complete
+
+Date validated: 2026-07-08
+
+Objective:
+
+- Deploy the first self-hosted application on `LINUX01`.
+- Validate the service as a real Git platform, not only as a reachable web page.
+- Back up and restore-test the new service data before calling the phase complete.
+
+Implemented service:
+
+| Item            | Value                                           |
+| --------------- | ----------------------------------------------- |
+| Service         | Gitea                                           |
+| Container       | `gitea`                                         |
+| Image           | `docker.gitea.com/gitea:1.26.4`                 |
+| URL             | `http://192.168.56.50:3000`                     |
+| Compose path    | `/srv/gitea/docker-compose.yml`                 |
+| Persistent data | `/srv/gitea/data`                               |
+| Config file     | `/srv/gitea/data/gitea/conf/app.ini`            |
+| Database        | SQLite3                                         |
+
+Validation:
+
+- Port `3000/tcp` passed from the Windows management workstation.
+- Gitea web login succeeded.
+- Private repository `michael/homelab-gitea-validation` was created.
+- HTTP Git push to `main` succeeded.
+- Backup archive, checksum, and manifest were created under `/var/backups/homelab/phase12-7`.
+- Restore test extracted the backup to `/tmp/phase12-7-gitea-restore-test` and confirmed key files
+  before cleanup.
+
+Rollback:
+
+- Run `sudo docker compose down` from `/srv/gitea`.
+- Preserve `/srv/gitea` for investigation unless intentionally retiring the service.
+- Restore `/srv/gitea` from `/var/backups/homelab/phase12-7/gitea-service-20260708.tar.gz` if
+  service data is damaged.
+
+Boundary:
+
+- `INFRA01` was not changed.
+- No secrets, passwords, or token values are documented.
 
 ## Phase 11.5 Linux Networking Validation
 
