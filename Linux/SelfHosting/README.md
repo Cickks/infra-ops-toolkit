@@ -113,17 +113,17 @@ Objective:
 
 Deployment:
 
-| Item           | Value                                           |
-| -------------- | ----------------------------------------------- |
-| App            | Gitea                                           |
-| Host           | `LINUX01`                                       |
-| URL            | `http://192.168.56.50:3000`                     |
-| Container      | `gitea`                                         |
-| Image          | `docker.gitea.com/gitea:1.26.4`                 |
-| Compose path   | `/srv/gitea/docker-compose.yml`                 |
-| Persistent data| `/srv/gitea/data`                               |
-| Database       | SQLite3                                         |
-| Git SSH        | Deferred; no host SSH port published for Gitea  |
+| Item            | Value                                          |
+| --------------- | ---------------------------------------------- |
+| App             | Gitea                                          |
+| Host            | `LINUX01`                                      |
+| URL             | `http://192.168.56.50:3000`                    |
+| Container       | `gitea`                                        |
+| Image           | `docker.gitea.com/gitea:1.26.4`                |
+| Compose path    | `/srv/gitea/docker-compose.yml`                |
+| Persistent data | `/srv/gitea/data`                              |
+| Database        | SQLite3                                        |
+| Git SSH         | Deferred; no host SSH port published for Gitea |
 
 Validation:
 

@@ -81,8 +81,7 @@ Primary order:
 6. Create a custom systemd service to prove service lifecycle management. Complete.
 7. Expand SSH key authentication and portfolio sync to `INFRA01`. Complete.
 8. Build Linux backup and restore validation. Complete.
-9. Choose one first self-hosted app with a documented change plan. Complete with Gitea on
-   `LINUX01`.
+9. Choose one first self-hosted app with a documented change plan. Complete with Gitea on `LINUX01`.
 10. Plan the enterprise documentation platform after backups and first-app decision are understood.
 11. Prepare `INFRA01` hardware before services as a dedicated production-readiness change: NVMe HAT,
     1TB NVMe SSD, active cooling, OS updates, SSH, static IP/DHCP reservation, SSD mount, Docker

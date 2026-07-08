@@ -139,15 +139,15 @@ Backup scope:
 
 Validation results:
 
-| Check             | Result                                      |
-| ----------------- | ------------------------------------------- |
-| SHA256 validation | `OK`                                        |
-| Manifest          | Created                                     |
-| Restore target    | `/tmp/phase12-7-gitea-restore-test`         |
-| Restored compose  | `docker-compose.yml` present                |
-| Restored config   | `app.ini` present                           |
-| Cleanup           | Temporary restore directory removed         |
-| Service check     | Gitea restarted and TCP `3000` remained up  |
+| Check             | Result                                     |
+| ----------------- | ------------------------------------------ |
+| SHA256 validation | `OK`                                       |
+| Manifest          | Created                                    |
+| Restore target    | `/tmp/phase12-7-gitea-restore-test`        |
+| Restored compose  | `docker-compose.yml` present               |
+| Restored config   | `app.ini` present                          |
+| Cleanup           | Temporary restore directory removed        |
+| Service check     | Gitea restarted and TCP `3000` remained up |
 
 Operational note:
 

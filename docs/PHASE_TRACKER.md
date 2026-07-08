@@ -59,7 +59,7 @@ Recommended sequence:
 | 12.4     | Custom systemd services           | Complete    | `linux01-systemd-heartbeat.service` created on `LINUX01`; service account, script, unit file, journald/file logging, lifecycle commands, enablement, rollback, and reboot validation complete |
 | 12.5     | SSH key expansion                 | Complete    | `INFRA01` key auth, `infra01` alias, SCP transfer test, and safe portfolio sync with `-Targets infra01 -NoRsync` validated                                                                    |
 | 12.6     | Linux backups                     | Complete    | Local backup of `/etc`, `/srv`, `/opt/homelab`, and `/var/log/homelab` created on `LINUX01`; checksum, manifest, restore test, service validation, and cleanup passed                         |
-| 12.7     | First self-hosted app decision    | Complete    | Gitea deployed on `LINUX01`; TCP `3000`, web login, private repo creation, HTTP Git push, backup, checksum, manifest, and restore test validated                                             |
+| 12.7     | First self-hosted app decision    | Complete    | Gitea deployed on `LINUX01`; TCP `3000`, web login, private repo creation, HTTP Git push, backup, checksum, manifest, and restore test validated                                              |
 | 12.8     | Enterprise documentation platform | Planned     | Choose BookStack or Wiki.js first; document SOPs, server builds, troubleshooting guides, change logs, incidents, rollback, ports, and backup/restore tests                                    |
 
 Phase 12 first-app recommendation:

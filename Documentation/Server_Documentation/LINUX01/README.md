@@ -743,16 +743,16 @@ Objective:
 
 Implemented service:
 
-| Item            | Value                                           |
-| --------------- | ----------------------------------------------- |
-| Service         | Gitea                                           |
-| Container       | `gitea`                                         |
-| Image           | `docker.gitea.com/gitea:1.26.4`                 |
-| URL             | `http://192.168.56.50:3000`                     |
-| Compose path    | `/srv/gitea/docker-compose.yml`                 |
-| Persistent data | `/srv/gitea/data`                               |
-| Config file     | `/srv/gitea/data/gitea/conf/app.ini`            |
-| Database        | SQLite3                                         |
+| Item            | Value                                |
+| --------------- | ------------------------------------ |
+| Service         | Gitea                                |
+| Container       | `gitea`                              |
+| Image           | `docker.gitea.com/gitea:1.26.4`      |
+| URL             | `http://192.168.56.50:3000`          |
+| Compose path    | `/srv/gitea/docker-compose.yml`      |
+| Persistent data | `/srv/gitea/data`                    |
+| Config file     | `/srv/gitea/data/gitea/conf/app.ini` |
+| Database        | SQLite3                              |
 
 Validation:
 
